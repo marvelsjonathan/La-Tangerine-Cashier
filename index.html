@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>function showErr(m){var b=document.getElementById("boot");if(!b){b=document.createElement("div");b.id="boot";(document.body||document.documentElement).appendChild(b)}b.style.cssText="position:fixed;left:0;right:0;top:0;z-index:99;background:#b00020;color:#fff;padding:12px;font:14px/1.4 system-ui,sans-serif;white-space:pre-wrap;word-break:break-all";b.textContent="The app could not start. Please send a screenshot of this message.\n"+m+"\n"+navigator.userAgent}window.addEventListener("error",function(e){showErr((e.message||"error")+" (line "+e.lineno+")")});window.addEventListener("unhandledrejection",function(e){showErr(String(e.reason))});</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="La Tangerine"><meta name="theme-color" content="#b8135a"><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEU0lEQVR4nO3dv46MYRTH8XfFn0KhWCR6N7CiVFCIxCWsuAeUrkGUaiGuwWoVohGNRE2isRpRSFSKSd5MjN/s/Hmfc37nme+nnvA+J989z+xmjb2j/cMB+J9T2Q8AX8QBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oB0OvsB0tz58Wr1F7+5eK/dk9ja25GPYFgrhVXsQi49xzF5EEqvoXQYR1gTizqrpKs4ErOY100iPcRh0sSi6pXUjsM2i3l1E6kaR4ks5lVMpOQPwcqVMdR85mKbo+KI/1FohVTaHB2UMZQ6RY3NUWigq/NfIQU2R5dlDBXO5R6H/wS3YX4632vFfHDT8rxiTDfHTpUxuJ7XMQ7PSbVmeGq7OAxnFMbt7F5xuE0nntUEjOKwmksinzm4xOEzEQcm07CIw2QWVhxmYhEHPOXH4fAl4il9MslxpJ/fXO58MuOgjFUkTin/WoGttDhYG6vLmlVOHJSxrpSJca1ASoiDtbGZ+LlFx0EZ2wieHtcKpNA4WBvbi5whmwNSXBysjamETZLNAYk4IAXFwZ0yrZh5Fvuoyd9fj99ee7D8NWcvXbj1+dmJf9TH+0+/v/4wzWNt5ODFw8t3ryc+wIkiNgdro4WAqfKeAxJxQGoeB3dKO61ny+aARByQiANS2zh4w9Fa0wkX+yHYhA5ePlr9xb8+fXl38/Hy15y/euXG+yfbPZQXrhVIxAGJOCARB6SGcfCtSox2c2ZzQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oDUMA7P//GwP+3mzOaARByQiAMScUAiDkht4+AbltaaTpjNAYk4IHX4D6n/HP/cctne/vb81LkzUz1PXc03B2872mk9W64VSMQBKSIObpYWAqbK5oAUFAfLY1ox82RzQCIOSHtH+4dhfxkf5zKJsDuazQEpNA7elm4vcoZsDkjRcbA8thE8vYTNQR+biZ8b1wqknDhYHutKmVja5qCP1WXNimsFUmYcLI9VJE4peXPQx3K588m/VuhDSZ9MfhywZRFH+peIIYeZWMQxeMzCh8k0XOIYbCaSzmcORnEMTnPJYjUBrzgGs+kEczu7XRyD34xiGJ7aMY7BclJNeZ439BeMN9D97yR7ZjFjujlGzrPbnvnp3OMY7Ce4Mf9zuV8r87q5YvyzmCmwOUZVZrpcoVNU2hyjoiukUBYzlTbHqNyUh5rPXHJzjEqskIpZzNSOY8Y2kbpZzPQQx8ikkupNjLqKYyYxkW6ymOkwjlFYJZ01Meo5jnmTh9JrEPN2JY5Fa+WyCyks2t04cKKSPwRDDOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAPSX3lcCogfwNzzAAAAAElFTkSuQmCC"><link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEU0lEQVR4nO3dv46MYRTH8XfFn0KhWCR6N7CiVFCIxCWsuAeUrkGUaiGuwWoVohGNRE2isRpRSFSKSd5MjN/s/Hmfc37nme+nnvA+J989z+xmjb2j/cMB+J9T2Q8AX8QBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oB0OvsB0tz58Wr1F7+5eK/dk9ja25GPYFgrhVXsQi49xzF5EEqvoXQYR1gTizqrpKs4ErOY100iPcRh0sSi6pXUjsM2i3l1E6kaR4ks5lVMpOQPwcqVMdR85mKbo+KI/1FohVTaHB2UMZQ6RY3NUWigq/NfIQU2R5dlDBXO5R6H/wS3YX4632vFfHDT8rxiTDfHTpUxuJ7XMQ7PSbVmeGq7OAxnFMbt7F5xuE0nntUEjOKwmksinzm4xOEzEQcm07CIw2QWVhxmYhEHPOXH4fAl4il9MslxpJ/fXO58MuOgjFUkTin/WoGttDhYG6vLmlVOHJSxrpSJca1ASoiDtbGZ+LlFx0EZ2wieHtcKpNA4WBvbi5whmwNSXBysjamETZLNAYk4IAXFwZ0yrZh5Fvuoyd9fj99ee7D8NWcvXbj1+dmJf9TH+0+/v/4wzWNt5ODFw8t3ryc+wIkiNgdro4WAqfKeAxJxQGoeB3dKO61ny+aARByQiANS2zh4w9Fa0wkX+yHYhA5ePlr9xb8+fXl38/Hy15y/euXG+yfbPZQXrhVIxAGJOCARB6SGcfCtSox2c2ZzQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oDUMA7P//GwP+3mzOaARByQiAMScUAiDkht4+AbltaaTpjNAYk4IHX4D6n/HP/cctne/vb81LkzUz1PXc03B2872mk9W64VSMQBKSIObpYWAqbK5oAUFAfLY1ox82RzQCIOSHtH+4dhfxkf5zKJsDuazQEpNA7elm4vcoZsDkjRcbA8thE8vYTNQR+biZ8b1wqknDhYHutKmVja5qCP1WXNimsFUmYcLI9VJE4peXPQx3K588m/VuhDSZ9MfhywZRFH+peIIYeZWMQxeMzCh8k0XOIYbCaSzmcORnEMTnPJYjUBrzgGs+kEczu7XRyD34xiGJ7aMY7BclJNeZ439BeMN9D97yR7ZjFjujlGzrPbnvnp3OMY7Ce4Mf9zuV8r87q5YvyzmCmwOUZVZrpcoVNU2hyjoiukUBYzlTbHqNyUh5rPXHJzjEqskIpZzNSOY8Y2kbpZzPQQx8ikkupNjLqKYyYxkW6ymOkwjlFYJZ01Meo5jnmTh9JrEPN2JY5Fa+WyCyks2t04cKKSPwRDDOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAPSX3lcCogfwNzzAAAAAElFTkSuQmCC">
+<title>La Tangerine Cashier</title>
+<style>
+:root{--bg:#f4f2f7;--sf:#fff;--tx:#241f30;--mu:#6e6880;--ac:#b8135a;--ac-t:#fff;--soft:#fbe3ee;--bd:#e0dbe8;--ok:#2f7d4f;--bad:#c62828;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17141e;--sf:#221e2c;--tx:#f1eef7;--mu:#a29bb5;--ac:#ec5f9a;--ac-t:#1a0710;--soft:#3a2231;--bd:#383247;--ok:#6fd096;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#17141e;--sf:#221e2c;--tx:#f1eef7;--mu:#a29bb5;--ac:#ec5f9a;--ac-t:#1a0710;--soft:#3a2231;--bd:#383247;--ok:#6fd096;--bad:#ff8a80}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;height:100%;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--bd);background:var(--sf);border-radius:10px;padding:10px 14px;min-height:44px}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:1px}
+input,select{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:10px;min-height:44px;width:100%}
+.primary{background:var(--ac);color:var(--ac-t);border-color:var(--ac);font-weight:700}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 400px;height:100%}
+.menu{display:flex;flex-direction:column;min-height:0;padding:14px 14px 0}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+h1{font-size:20px;margin:0;letter-spacing:-.01em}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px}
+.chips button{white-space:nowrap;border-radius:99px}
+.chips .on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;align-content:start;padding-bottom:90px}
+.item{text-align:left;display:block;height:auto;min-height:92px;padding:12px}.item b,.item span,.item small{display:block}.item span,.item small{margin-top:6px}
+.item b{font-weight:600}.item span{color:var(--ac);font-weight:700}
+.item:active{background:var(--soft)}
+.custom{display:grid;grid-template-columns:1fr 120px auto;gap:8px;padding:10px 0}
+.order{background:var(--sf);border-left:1px solid var(--bd);display:flex;flex-direction:column;min-height:0}
+.order h2{margin:0;padding:14px 16px 6px;font-size:17px;display:flex;justify-content:space-between}
+.lines{flex:1;overflow-y:auto;padding:0 16px}
+.line{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.line .q{display:flex;align-items:center;gap:6px}
+.q button{width:36px;min-height:36px;padding:0}
+.empty{color:var(--mu);padding:24px 0;text-align:center}
+.pay{padding:12px 16px 16px;border-top:1px solid var(--bd);display:grid;gap:8px}
+.row{display:flex;justify-content:space-between;gap:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.total{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--ac)}
+.quick{display:flex;gap:6px;flex-wrap:wrap}.quick button{min-height:38px;padding:6px 10px}
+.muted{color:var(--mu);font-size:14px}.chg{font-weight:700}
+.bar{display:none}
+.modal{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px;z-index:30}
+.modal.open{display:flex}
+.card{background:var(--sf);border-radius:14px;padding:16px;width:100%;max-width:640px}
+.card h3{margin:0 0 10px}
+.erow{display:grid;grid-template-columns:1fr 110px 120px 44px;gap:6px;margin-bottom:6px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+label{font-size:13px;color:var(--mu);display:block;margin-bottom:2px}
+#receipt{display:none}
+@media (max-width:800px){
+ .app{grid-template-columns:minmax(0,1fr)}
+ .order{position:fixed;top:0;right:0;bottom:0;left:0;z-index:20;transform:translateY(100%);transition:transform .2s;border:0}
+ .order.open{transform:none}
+ .bar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:10;justify-content:space-between;align-items:center;min-height:54px;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+ .erow{grid-template-columns:1fr 90px 44px}.erow .cat{display:none}
+ .custom{grid-template-columns:1fr 100px auto}
+}
+@media (prefers-reduced-motion:reduce){.order{transition:none}}
+.hbtn{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.hbtn select{width:auto}.hbtn button{padding:8px 10px}.item:disabled{opacity:.45;cursor:not-allowed}input:disabled,select:disabled,.quick button:disabled{opacity:.5;cursor:not-allowed}.erow{grid-template-columns:1fr 100px 110px 80px 60px 44px}@media (max-width:800px){.erow{grid-template-columns:1fr 80px 70px 60px 44px}}.erow.pr{grid-template-columns:1fr 110px 80px;align-items:center}.item s{color:var(--mu);font-weight:400;font-size:13px}.erow.pm{grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--bd);padding-bottom:10px;margin-bottom:12px}.erow.pm input{padding:8px 6px;font-size:16px}#pitems{max-height:38vh;overflow-y:auto;margin-bottom:8px}#mx{z-index:40}#mc{z-index:50}
+html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wrap}header h1{flex:1 1 auto;min-width:0}
+.hbtn{flex:0 1 auto;max-width:100%}
+@media (max-width:800px){h1{font-size:18px}.hbtn{width:100%;justify-content:flex-start}.hbtn button,.hbtn select{min-height:38px;padding:6px 10px;font-size:15px}.chips{max-width:100%}.grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+.cl{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--bd)}
+.cl .muted{font-size:12px}.cl .q button{width:32px;min-height:32px}.cl>b{text-align:right}
+.order h2{padding:8px 12px 4px;font-size:16px}.lines{padding:0 12px}
+.pay{padding:8px 12px 10px;gap:5px;max-height:62vh;overflow-y:auto}
+.pay label{font-size:12px;margin:0}
+.pay input,.pay select{min-height:36px;padding:4px 8px;font-size:16px}
+.pay .row{font-size:14px}.pay .muted{font-size:13px}
+.dgrid{display:grid;grid-template-columns:1.3fr 1fr .9fr;gap:6px}
+.pay .quick{gap:4px}.pay .quick button{min-height:30px;padding:2px 9px;font-size:13px}
+.pay .bt{grid-template-columns:1fr 2fr}.pay .bt button{min-height:44px}
+#tTotal{font-size:26px}#msg:empty{display:none}
+.nl{max-height:32vh;overflow-y:auto;border-bottom:1px solid var(--bd);margin-bottom:8px;padding-bottom:6px}.nl .row{font-size:14px;padding:2px 0}.card h4{margin:14px 0 6px}
+@media print{
+ @page{margin:0}
+ body>*:not(#receipt){display:none!important}
+ #receipt{display:block;width:72mm;margin:0 auto;padding:4mm;color:#000;background:#fff;font:12px/1.35 "Courier New",monospace}
+ #receipt h4{text-align:center;font-size:16px;margin:0 0 2px}
+ #receipt .c{text-align:center}
+ #receipt .r{display:flex;justify-content:space-between;gap:8px}
+ #receipt hr{border:0;border-top:1px dashed #000;margin:6px 0}
+}
+</style>
+</head>
+<body>
+<div id="boot" style="padding:16px;font:16px system-ui,sans-serif">Loading La Tangerine Cashier...</div>
+<div class="app">
+ <section class="menu">
+  <header>
+   <h1 id="shopname"></h1>
+   <div class="hbtn"><select id="staff" aria-label="Cashier"></select><button id="btnPre">Pre-orders</button><button id="btnRep">Sales</button><button id="btnExp">Export</button><button id="btnEdit">Settings</button></div>
+  </header>
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="grid"></div>
+  <div class="custom">
+   <input id="cName" placeholder="Custom item (e.g. Birthday cake)">
+   <input id="cPrice" type="number" inputmode="decimal" min="0" placeholder="Price">
+   <button id="cAdd">Add</button>
+  </div>
+ </section>
+
+ <aside class="order" id="order">
+  <h2><span>Current order <span class="muted" id="rno"></span></span><button id="btnClose" class="close">Close</button></h2>
+  <div class="lines" id="lines"></div>
+  <div class="pay">
+   <div class="row muted"><span>Subtotal</span><span id="tSub"></span></div>
+   <div class="row muted" id="rDisc"><span>Discount</span><span id="tDisc"></span></div>
+   <div class="row muted" id="rTax"><span id="tTaxL">Tax</span><span id="tTax"></span></div>
+   <div class="dgrid">
+    <div><label for="vcode">Voucher code</label><input id="vcode" maxlength="40" autocomplete="off" placeholder="Enter code"></div>
+    <div><label for="dVal">Discount</label><input id="dVal" type="number" inputmode="decimal" min="0" value="0"></div>
+    <div><label for="dType">Type</label><select id="dType"><option value="%">%</option><option value="amt">Amount</option></select></div>
+   </div>
+   <div class="quick" id="dq"><button data-d="0">No discount</button><button data-d="5">5%</button><button data-d="10">10%</button><button data-d="20">20%</button></div>
+   <div class="row" style="align-items:baseline"><span>Total</span><span class="total" id="tTotal"></span></div>
+   <div class="two">
+    <div><label for="method">Payment method</label><select id="method"><option>Cash</option><option>QRIS</option><option>Card</option><option>Transfer</option></select></div>
+    <div id="cashBox"><label for="cash">Cash received</label><input id="cash" type="number" inputmode="decimal" min="0"></div>
+   </div>
+   <div class="quick" id="quick"></div>
+   <div class="row"><span>Change</span><span class="chg" id="tChg">0</span></div>
+   <div class="two bt"><button id="btnClear">Clear order</button><button id="btnPay" class="primary">Pay and print</button></div>
+   <div class="muted" id="msg" role="status"></div>
+  </div>
+ </aside>
+</div>
+
+<button class="bar primary" id="bar"><span id="barN">0 items</span><span id="barT">View order</span></button>
+
+<div class="modal" id="modal">
+ <div class="card">
+  <h3>Shop settings and menu</h3>
+  <div class="fgrid">
+   <div><label for="sShop">App name (top of screen)</label><input id="sShop"></div><div><label for="sRn">Name on receipts</label><input id="sRn"></div>
+   <div><label for="sCur">Currency symbol</label><input id="sCur"></div>
+   <div><label for="sTax">Tax (%)</label><input id="sTax" type="number" min="0" step="0.1"></div>
+   <div><label for="sFoot">Receipt message</label><input id="sFoot"></div><div><label for="sStaff">Cashier names (comma separated)</label><input id="sStaff"></div><div><label for="sRef">Full refund if pre-order cancelled this many days before pickup</label><input id="sRef" type="number" min="0"></div><div><label for="sMin">Minimum pre-order deposit (% of total)</label><input id="sMin" type="number" min="0" max="100"></div>
+  </div>
+  <div id="erows"></div>
+  <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+   <button id="eAdd">Add menu item</button><button id="eOff">Inactive items</button><button id="eChg">Change admin PIN</button>
+   <button id="eDone" class="primary">Save and close</button>
+  </div>
+ </div>
+</div>
+
+<div class="modal" id="mc"><div class="card" id="mcc" style="max-width:420px;margin-top:12vh"></div></div>
+<div class="modal" id="mx"><div class="card" id="mxc"></div></div>
+<div id="receipt"></div>
+
+<script>
+const $=s=>document.querySelector(s);const nz=(v,d)=>v==null?d:v;
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function load(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+const DEF=[
+ ["Lapis Legit Original Whole", 819000, "Lapis Legit"],
+ ["Lapis Legit Cream Cheese Whole", 929000, "Lapis Legit"],
+ ["Lapis Legit Prunes Whole", 959000, "Lapis Legit"],
+ ["Lapis Legit Cheddar Whole", 899000, "Lapis Legit"],
+ ["Lapis Legit Original 1/2", 459000, "Lapis Legit"],
+ ["Lapis Legit Cream Cheese 1/2", 529000, "Lapis Legit"],
+ ["Lapis Legit Prunes 1/2", 559000, "Lapis Legit"],
+ ["Lapis Legit Cheddar 1/2", 509000, "Lapis Legit"],
+ ["Lapis Legit Original 1/4", 235000, "Lapis Legit"],
+ ["Lapis Legit Cream Cheese 1/4", 265000, "Lapis Legit"],
+ ["Lapis Legit Prunes 1/4", 280000, "Lapis Legit"],
+ ["Lapis Legit Cheddar 1/4", 255000, "Lapis Legit"],
+ ["Lapis Legit Original Slice", 26000, "Slices"],
+ ["Lapis Legit Cream Cheese Slice", 29000, "Slices"],
+ ["Lapis Legit Prunes Slice", 30000, "Slices"],
+ ["Lapis Legit Cheddar Slice", 28000, "Slices"],
+ ["Lapis Surabaya Whole", 419000, "Lapis Surabaya"],
+ ["Lapis Surabaya 1/2 Loyang", 249000, "Lapis Surabaya"],
+ ["Lapis Surabaya Slice", 17000, "Slices"],
+ ["Choco Roll (Whole)", 130000, "Roll Cake"],
+ ["Martabak Roll (Whole)", 130000, "Roll Cake"],
+ ["Super Cheese Roll (Whole)", 130000, "Roll Cake"],
+ ["Choco Roll Slice", 16000, "Slices"],
+ ["Martabak Roll Slice", 16000, "Slices"],
+ ["Super Cheese Roll Slice", 16000, "Slices"],
+ ["Tiger Cake", 219000, "Tiger Cake"],
+ ["Tiger Cake Slice", 14000, "Slices"],
+ ["Choco Forest", 448000, "Whole Cake"],
+ ["Choco Jadoel", 280000, "Whole Cake"],
+ ["Mocca Jadoel", 280000, "Whole Cake"],
+ ["White Coconut", 320000, "Whole Cake"],
+ ["Matcha Ube", 340000, "Whole Cake"],
+ ["Choco Jadoel Slice", 49000, "Slices"],
+ ["Mocca Jadoel Slice", 49000, "Slices"],
+ ["White Coconut Slice", 55000, "Slices"],
+ ["Matcha Ube Slice", 58000, "Slices"]
+].map((a,i)=>({id:"d"+i,name:a[0],price:a[1],cat:a[2]}));
+let S=Object.assign({shop:"La Tangerine Cashier",rname:"La Tangerine",cur:"Rp",tax:0,foot:"Thank you, see you again!",staff:"Cashier 1, Cashier 2",refund:3,minDep:30},load("cc_set",{}));
+let M=load("cc_menu",DEF);
+let N=load("cc_no",1);
+let cart=[],cat="All",total=0;
+
+const fmt=n=>{const x=(S.cur||"").trim();const s=new Intl.NumberFormat(x==="Rp"?"id-ID":"en-US",{maximumFractionDigits:2}).format(n||0);return (x?x+" ":"")+s};
+const cats=()=>["All",...new Set(M.filter(on).map(i=>i.cat||"Other"))];
+
+function renderMenu(){
+ $("#shopname").textContent=S.shop;document.title=S.shop;
+ if(!cats().includes(cat))cat="All";
+ $("#chips").innerHTML=cats().map(c=>`<button class="${c===cat?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+ $("#grid").innerHTML=M.filter(i=>on(i)&&(cat==="All"||(i.cat||"Other")===cat)).map(i=>`<button class="item" data-id="${i.id}"${tracked(i)&&+i.stock<=0?" disabled":""}><b>${esc(i.name)}</b>${promoOn(i)?`<span><s>${fmt(i.price)}</s> ${fmt(i.promo)}</span>`:`<span>${fmt(i.price)}</span>`}${tracked(i)?`<small class="muted">${+i.stock<=0?"Sold out":i.stock+" left"}</small>`:""}</button>`).join("")||'<div class="empty">No items yet. Tap Edit menu to add some.</div>';
+}
+function add(it){const l=cart.find(x=>x.id===it.id);if(tracked(it)&&(l?l.qty:0)>=+it.stock)return say("Only "+it.stock+" left of "+it.name+".",true);if(l)l.qty++;else cart.push({id:it.id,name:it.name,price:eff(it),orig:+it.price,qty:1});renderCart()}
+function renderCart(){
+ $("#rno").textContent="#"+peek("cc_rno");
+ $("#lines").innerHTML=cart.length?cart.map((l,i)=>`<div class="cl"><div><b>${esc(l.name)}</b><div class="muted">${l.orig>l.price?`<s>${fmt(l.orig)}</s> `:""}${fmt(l.price)} each</div></div><span class="q"><button data-m="${i}" aria-label="Remove one">−</button><span>${l.qty}</span><button data-p="${i}" aria-label="Add one">+</button></span><b>${fmt(l.price*l.qty)}</b></div>`).join(""):'<div class="empty">Tap an item to start the order.</div>';
+ const n=cart.reduce((s,l)=>s+l.qty,0);
+ $("#barN").textContent=n+(n===1?" item":" items");
+ calc();
+}
+function calc(){const hv=!!$("#vcode").value.trim();$("#dVal").disabled=$("#dType").disabled=!hv;$("#dq").querySelectorAll("button").forEach(b=>b.disabled=!hv);if(!hv)$("#dVal").value=0;
+ const sub=cart.reduce((s,l)=>s+l.price*l.qty,0);
+ const v=Math.max(0,+$("#dVal").value||0);
+ let d=$("#dType").value==="%"?sub*Math.min(v,100)/100:v;d=Math.min(d,sub);
+ const tax=(sub-d)*(+S.tax||0)/100;
+ total=Math.round((sub-d+tax)*100)/100;
+ $("#tSub").textContent=fmt(sub);$("#tDisc").textContent="− "+fmt(d);$("#tTax").textContent=fmt(tax);
+ $("#rDisc").style.display=d>0?"flex":"none";$("#rTax").style.display=S.tax>0?"flex":"none";$("#tTaxL").textContent="Tax ("+S.tax+"%)";
+ $("#tTotal").textContent=fmt(total);$("#barT").textContent=fmt(total)+" · View order";
+ const big=(S.cur||"").trim()==="Rp"?[50000,100000]:[10,20,50,100];
+ $("#quick").innerHTML=cart.length&&$("#method").value==="Cash"?`<button data-q="${total}">Exact</button>`+big.map(b=>`<button data-q="${b}">${fmt(b)}</button>`).join(""):"";
+ $("#cashBox").style.display=$("#method").value==="Cash"?"block":"none";
+ change();
+ return {sub,d,tax};
+}
+function change(){const c=+$("#cash").value||0;$("#tChg").textContent=$("#method").value==="Cash"&&c>=total?fmt(c-total):"—"}
+function say(t,bad){const m=$("#msg");m.textContent=t;m.style.color=bad?"var(--bad)":"var(--ok)"}
+
+function receipt(t,paid,chg,method,extra="",lines=cart,no=peek("cc_rno")){
+ const now=new Date();
+ const rows=lines.map(l=>`<div>${esc(l.name)}</div><div class="r"><span>${l.qty} x ${fmt(l.price)}</span><span>${fmt(l.qty*l.price)}</span></div>`).join("");
+ $("#receipt").innerHTML=`<h4>${esc(S.rname||S.shop)}</h4><div class="c">${now.toLocaleString()}</div><div class="c">Receipt #${no}</div>${staff?`<div class="c">Cashier: ${esc(staff)}</div>`:""}<hr>${rows}<hr>
+ <div class="r"><span>Subtotal</span><span>${fmt(t.sub)}</span></div>
+ ${t.d>0?`<div class="r"><span>Discount</span><span>− ${fmt(t.d)}</span></div>`:""}
+ ${t.tax>0?`<div class="r"><span>Tax (${S.tax}%)</span><span>${fmt(t.tax)}</span></div>`:""}
+ <div class="r"><b>TOTAL</b><b>${fmt(total)}</b></div><hr>
+ <div class="r"><span>Paid by ${esc(method)}</span><span>${fmt(paid)}</span></div>
+ ${method==="Cash"?`<div class="r"><span>Change</span><span>${fmt(chg)}</span></div>`:""}
+ ${extra}<hr><div class="c">${esc(S.foot)}</div>`;
+}
+function pay(){
+ if(!cart.length)return say("Add at least one item first.",true);
+ const method=$("#method").value,c=+$("#cash").value||0;
+ if(method==="Cash"&&c<total)return say("Cash received is less than the total.",true);
+ const sm=`${itemsH(cart)}<div class="row"><span>Items</span><b>${cart.reduce((q,l)=>q+l.qty,0)}</b></div><div class="row"><span>Total</span><b>${fmt(total)}</b></div><div class="row"><span>Paid by</span><b>${esc(method)}</b></div>${method==="Cash"?`<div class="row"><span>Cash received</span><b>${fmt(c)}</b></div><div class="row"><span>Change</span><b>${fmt(c-total)}</b></div>`:""}`;
+ ask("Confirm payment",sm,()=>{const t=calc();
+ receipt(t,method==="Cash"?c:total,method==="Cash"?c-total:0,method);
+ window.print();
+ record("sale",total,method,Object.assign({voucher:$("#vcode").value.trim()},t));useStock(cart);bump("cc_rno");newOrder();say("Order complete. Ready for the next customer.");})
+}
+function newOrder(){cart=[];$("#cash").value="";$("#dVal").value=0;$("#vcode").value="";renderCart();$("#order").classList.remove("open")}
+
+$("#chips").onclick=e=>{const b=e.target.closest("button");if(b){cat=b.dataset.c;renderMenu()}};
+$("#grid").onclick=e=>{const b=e.target.closest(".item");if(b){const it=M.find(i=>i.id===b.dataset.id);if(it)add(it);$("#msg").textContent=""}};
+$("#lines").onclick=e=>{const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.p!=null){const l=cart[+b.dataset.p],m=M.find(i=>i.id===l.id);if(!(m&&tracked(m)&&l.qty>=+m.stock))l.qty++}
+ if(b.dataset.m!=null){const l=cart[+b.dataset.m];if(--l.qty<=0)cart.splice(+b.dataset.m,1)}
+ renderCart()};
+$("#quick").onclick=e=>{const b=e.target.closest("button");if(b){$("#cash").value=b.dataset.q;change()}};
+["dVal","dType","method","vcode"].forEach(id=>$("#"+id).oninput=calc);
+$("#cash").oninput=change;
+$("#btnPay").onclick=pay;
+$("#btnClear").onclick=()=>{newOrder();$("#msg").textContent=""};
+$("#bar").onclick=()=>$("#order").classList.add("open");
+$("#btnClose").onclick=()=>$("#order").classList.remove("open");
+$("#cAdd").onclick=()=>{const n=$("#cName").value.trim(),p=+$("#cPrice").value;
+ if(!n||!(p>=0)||$("#cPrice").value==="")return say("Enter a name and a price for the custom item.",true);
+ add({id:"c"+Date.now(),name:n,price:p});$("#cName").value="";$("#cPrice").value="";$("#msg").textContent=""};
+
+function editor(){
+ $("#sShop").value=S.shop;$("#sRn").value=S.rname||S.shop;$("#sCur").value=S.cur;$("#sTax").value=S.tax;$("#sFoot").value=S.foot;$("#sStaff").value=S.staff;$("#sRef").value=nz(S.refund,3);$("#sMin").value=nz(S.minDep,30);
+ $("#erows").innerHTML=M.map((i,k)=>!on(i)?"":`<div class="erow"><input data-k="${k}" data-f="name" value="${esc(i.name)}" aria-label="Name"><input data-k="${k}" data-f="price" type="number" min="0" value="${i.price}" aria-label="Price"><input class="cat" data-k="${k}" data-f="cat" value="${esc(i.cat||"")}" aria-label="Category"><input data-k="${k}" data-f="stock" type="number" min="0" placeholder="Stock" value="${tracked(i)?i.stock:""}" aria-label="Stock (empty = not tracked)"><button data-off="${k}" title="Make inactive">Hide</button><button data-del="${k}" aria-label="Delete item">×</button></div><div class="erow pm"><div><label>Promo price</label><input data-k="${k}" data-f="promo" type="number" min="0" value="${nz(i.promo,"")}"></div><div><label>Promo from</label><input data-k="${k}" data-f="pFrom" type="date" value="${i.pFrom||""}"></div><div><label>Promo until</label><input data-k="${k}" data-f="pTo" type="date" value="${i.pTo||""}"></div></div>`).join("");
+}
+$("#btnEdit").onclick=()=>adminGate(()=>{editor();$("#modal").classList.add("open")});
+$("#erows").oninput=e=>{const k=e.target.dataset.k,f=e.target.dataset.f;if(k==null)return;M[k][f]=f==="price"?(+e.target.value||0):f==="promo"?(e.target.value===""?"":Math.max(0,+e.target.value)):f==="stock"?(e.target.value===""?"":Math.max(0,+e.target.value)):e.target.value};
+$("#erows").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.del!=null){M.splice(+b.dataset.del,1);editor()}else if(b.dataset.off!=null){M[+b.dataset.off].active=false;editor()}};
+$("#eAdd").onclick=()=>{M.push({id:"m"+Date.now(),name:"New item",price:0,cat:cat==="All"?"Pastries":cat});editor()};
+$("#eDone").onclick=()=>{
+ S.shop=$("#sShop").value.trim()||"La Tangerine Cashier";S.rname=$("#sRn").value.trim()||S.shop;S.cur=$("#sCur").value;S.tax=Math.max(0,+$("#sTax").value||0);S.foot=$("#sFoot").value;S.staff=$("#sStaff").value;S.refund=$("#sRef").value===""?3:Math.max(0,+$("#sRef").value);S.minDep=$("#sMin").value===""?30:Math.min(100,Math.max(0,+$("#sMin").value));
+ save("cc_set",S);save("cc_menu",M);cart=cart.filter(l=>l.id[0]==="c"||M.some(i=>i.id===l.id));
+ $("#modal").classList.remove("open");renderMenu();renderCart();hdr()};
+
+/* staff, stock, sales history, pre-orders */
+const tracked=i=>i.stock!=null&&i.stock!==""&&!isNaN(i.stock);
+let staff=load("cc_staff",""),sales=load("cc_sales",[]),pre=load("cc_pre",[]),preT={};
+const names=()=>String(S.staff||"").split(",").map(s=>s.trim()).filter(Boolean);
+function hdr(){const n=names();if(!n.includes(staff))staff=n[0]||"";$("#staff").innerHTML=n.map(x=>`<option${x===staff?" selected":""}>${esc(x)}</option>`).join("");$("#btnPre").textContent="Pre-orders ("+pre.filter(p=>!p.done).length+")"}
+$("#staff").onchange=e=>{staff=e.target.value;save("cc_staff",staff)};
+function record(type,amt,method,x){sales.push(Object.assign({no:N,ref:peek("cc_rno"),ts:Date.now(),staff,type,method,amt,items:cart.map(l=>({n:l.name,q:l.qty,p:l.price}))},x));save("cc_sales",sales)}
+function useStock(lines,back){lines.forEach(l=>{const m=M.find(i=>i.id===l.id);if(m&&tracked(m))m.stock=Math.max(0,+m.stock+(back?l.qty:-l.qty))});save("cc_menu",M);renderMenu()}
+function openM(h){$("#mxc").innerHTML=h;$("#mx").classList.add("open")}
+const closeM=()=>$("#mx").classList.remove("open");
+const day=ts=>{const d=new Date(ts);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const R=(o,f)=>Object.entries(o).map(([k,v])=>`<div class="row"><span>${esc(k)}</span><b>${f(v)}</b></div>`).join("")||'<div class="muted">None</div>';
+const on=i=>i.active!==false;
+const promoOn=i=>{if(i.promo==null||i.promo===""||isNaN(i.promo))return false;const d=day(Date.now());return(!i.pFrom||d>=i.pFrom)&&(!i.pTo||d<=i.pTo)};
+const eff=i=>promoOn(i)?+i.promo:+i.price;
+const ddmmyy=()=>{const d=new Date();return String(d.getDate()).padStart(2,"0")+String(d.getMonth()+1).padStart(2,"0")+String(d.getFullYear()%100).padStart(2,"0")};
+const peek=k=>{const c=load(k,{}),d=ddmmyy();return d+String(c.d===d?c.n:1).padStart(4,"0")};
+const bump=k=>{const c=load(k,{}),d=ddmmyy();save(k,{d,n:(c.d===d?c.n:1)+1})};
+const PM='<option>Cash</option><option>QRIS</option><option>Card</option><option>Transfer</option>';
+function report(d){d=d||day(Date.now());
+ const L=sales.filter(s=>day(s.ts)===d),st=L.filter(s=>s.type==="sale"),po=L.filter(s=>s.type!=="sale"),sum=a=>a.reduce((s,x)=>s+x.amt,0),
+ by=(a,k)=>a.reduce((o,s)=>(o[s[k]||"-"]=(o[s[k]||"-"]||0)+s.amt,o),{}),
+ cnt=(a,f)=>{const o={};a.filter(f).forEach(s=>s.items.forEach(i=>o[i.n]=(o[i.n]||0)+i.q));return o},
+ lab={sale:"Sale",deposit:"Deposit",balance:"Balance",refund:"Refund"};
+ openM(`<h3>Sales report</h3><label for="rd">Date</label><input id="rd" type="date" value="${d}"><div class="two" style="margin-top:10px"><div><div class="muted">Store sales</div><div class="total" style="font-size:24px">${fmt(sum(st))}</div></div><div><div class="muted">Pre-orders (net of refunds)</div><div class="total" style="font-size:24px">${fmt(sum(po))}</div></div></div><div class="muted">Total money received: <b>${fmt(sum(L))}</b></div><h4>Store: by payment method</h4>${R(by(st,"method"),fmt)}<h4>Store: items sold</h4>${R(cnt(st,()=>true),x=>x)}<h4>Pre-orders: by payment method</h4>${R(by(po,"method"),fmt)}<h4>Pre-orders: items booked</h4>${R(cnt(po,s=>s.type==="deposit"),x=>x)}<h4>By cashier</h4>${R(by(L,"staff"),fmt)}<h4>Payments</h4>${L.slice().reverse().map(s=>`<div class="row muted"><span>${new Date(s.ts).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})} ${esc(s.ref||"#"+String(s.no).padStart(4,"0"))} ${s.full?"Full payment":lab[s.type]}, ${esc(s.staff||"-")}, ${esc(s.method)}${s.voucher?", voucher "+esc(s.voucher):""}</span><b>${fmt(s.amt)}</b></div>`).join("")||'<div class="muted">None</div>'}<button data-a="close" style="margin-top:14px">Close</button>`)}
+const preX=(p,l)=>`<hr><div>PRE-ORDER: ${esc(p.name)}</div><div>Pickup: ${esc(p.date)}</div>${p.note?`<div>${esc(p.note)}</div>`:""}${l}`;
+const daysTo=d=>Math.round((new Date(d+"T00:00:00")-new Date(day(Date.now())+"T00:00:00"))/864e5);
+function preLines(){const L=[];document.querySelectorAll("[data-pq]").forEach(x=>{const q=+x.value,i=M.find(m=>m.id===x.dataset.pq);if(q>0&&i)L.push({id:i.id,name:i.name,price:eff(i),qty:q})});
+ const n=$("#xn").value.trim(),p=+$("#xp").value,q=+$("#xq").value;if(n&&$("#xp").value!==""&&p>=0&&q>0)L.push({id:"c"+Date.now(),name:n,price:p,qty:q});return L}
+function preCalc(){const hv=!!$("#pv").value.trim();$("#pdv").disabled=!hv;if(!hv)$("#pdv").value=0;const L=preLines(),sub=L.reduce((s,l)=>s+l.price*l.qty,0),d=sub*Math.min(Math.max(+$("#pdv").value||0,0),100)/100,tax=(sub-d)*(+S.tax||0)/100,tt=Math.round((sub-d+tax)*100)/100;
+ $("#ptot").textContent=fmt(tt);const full=$("#pk").value==="full";$("#pab").style.display=full?"none":"block";$("#pdep").textContent=full?"Paid in full today.":"Minimum deposit ("+(nz(S.minDep,30))+"%): "+fmt(Math.ceil(tt*(nz(S.minDep,30))/100));return{L,t:{sub,d,tax},tt}}
+function newForm(){return `<div class="fgrid"><div><label for="pn">Customer name</label><input id="pn"></div><div><label for="pp">Phone</label><input id="pp" type="tel"></div><div><label for="pd">Pickup date</label><input id="pd" type="date"></div><div><label for="pt">Notes (flavour, text on cake)</label><input id="pt"></div></div><label>Items (enter quantity)</label><div id="pitems">${M.filter(on).map(i=>`<div class="erow pr"><span>${esc(i.name)}</span><span class="muted">${promoOn(i)?`<s>${fmt(i.price)}</s> ${fmt(i.promo)}`:fmt(i.price)}</span><input type="number" min="0" data-pq="${i.id}" placeholder="0" aria-label="Quantity of ${esc(i.name)}"></div>`).join("")}<div class="erow pr"><input id="xn" placeholder="Custom item"><input id="xp" type="number" min="0" placeholder="Price"><input id="xq" type="number" min="0" placeholder="Qty"></div></div><div class="fgrid"><div><label for="pv">Voucher code (required to give a discount)</label><input id="pv" maxlength="40" autocomplete="off" placeholder="Enter code to unlock discount"></div><div><label for="pdv">Discount (%)</label><input id="pdv" type="number" min="0" max="100" value="0"></div><div><label for="pk">Payment now</label><select id="pk"><option value="dep">Deposit</option><option value="full">Full payment</option></select></div><div id="pab"><label for="pa">Deposit amount (empty = minimum)</label><input id="pa" type="number" min="0"></div><div><label for="pm">Paid by</label><select id="pm">${PM}</select></div></div><div class="row" style="align-items:baseline"><span>Total</span><b class="total" id="ptot"></b></div><div class="muted" id="pdep"></div><button class="primary" data-a="savepre" style="width:100%;margin-top:10px">Save and print deposit receipt</button><div id="pmsg" style="color:var(--bad);margin-top:8px" role="alert"></div>`}
+function listHTML(){const o=pre.filter(p=>!p.done).sort((a,b)=>a.date.localeCompare(b.date));
+ return o.map(p=>`<div class="line"><div><b>${esc(p.no||"")} ${esc(p.name)}</b> <span class="muted">${esc(p.phone)}</span><div class="muted">Pickup ${esc(p.date)}${p.note?", "+esc(p.note):""}</div><div class="muted">${p.lines.map(l=>l.qty+" x "+esc(l.name)).join(", ")}</div></div><div style="text-align:right"><b>${p.total-p.dep>0?"Balance "+fmt(p.total-p.dep):"Paid in full"}</b><div class="muted">of ${fmt(p.total)}</div></div><div class="two" style="grid-column:1/3"><button data-a="cancelpre" data-id="${p.id}">Cancel order</button><button class="primary" data-a="collect" data-id="${p.id}">${p.total-p.dep>0?"Collect balance":"Hand over"}</button></div></div>`).join("")||'<div class="empty">No open pre-orders.</div>'}
+function preHub(t){const n=pre.filter(p=>!p.done).length;
+ openM(`<h3>Pre-orders</h3><div class="muted" style="margin-bottom:8px">Kept separate from store sales. Pre-orders never use store stock.</div><div class="chips"><button class="${t==="new"?"":"on"}" data-a="plist">Open orders (${n})</button><button class="${t==="new"?"on":""}" data-a="pnew">New pre-order</button></div>${t==="new"?newForm():listHTML()}<button data-a="close" style="margin-top:14px">Close</button>`);if(t==="new")preCalc()}
+function savePre(){const {L,t,tt}=preCalc(),v=id=>$("#"+id).value.trim();
+ if(!v("pn")||!v("pd"))return $("#pmsg").textContent="Enter the customer name and pickup date.";
+ if(!L.length)return $("#pmsg").textContent="Enter a quantity for at least one item.";
+ const full=v("pk")==="full",mn=Math.ceil(tt*(nz(S.minDep,30))/100),dep=full?tt:v("pa")===""?mn:+v("pa");
+ if(!(dep>0&&dep>=mn&&dep<=tt))return $("#pmsg").textContent="Deposit must be at least "+fmt(mn)+" ("+(nz(S.minDep,30))+"% of the total) and not more than the total.";
+ ask("Confirm pre-order payment",`${itemsH(L)}<div class="row"><span>Order total</span><b>${fmt(tt)}</b></div><div class="row"><span>Paid now (${full?"full":"deposit"})</span><b>${fmt(dep)}</b></div><div class="row"><span>Balance due</span><b>${fmt(tt-dep)}</b></div><div class="row"><span>Paid by</span><b>${esc(v("pm"))}</b></div>`,()=>{const no="PO-"+peek("cc_pno2"),p={id:"p"+Date.now(),no,name:v("pn"),phone:v("pp"),date:v("pd"),note:v("pt"),total:tt,dep,sub:t.sub,d:t.d,tax:t.tax,lines:L,dm:v("pm"),voucher:v("pv"),done:false};
+ pre.push(p);bump("cc_pno2");save("cc_pre",pre);
+ record("deposit",dep,p.dm,{ref:no,full:dep>=tt,voucher:v("pv"),items:L.map(l=>({n:l.name,q:l.qty,p:l.price}))});
+ total=tt;receipt(t,dep,0,p.dm,preX(p,`${tt-dep>0?`<div class="r"><b>Balance due</b><b>${fmt(tt-dep)}</b></div>`:`<div class="c"><b>PAID IN FULL</b></div>`}`),L,no);window.print();
+ hdr();renderCart();preHub("list")})}
+function collectForm(id){const p=pre.find(x=>x.id===id);
+ openM(`<h3>Collect balance: ${esc(p.name)}</h3><div class="total">${fmt(p.total-p.dep)}</div>${p.total-p.dep>0?`<label for="cm">Paid by</label><select id="cm">${PM}</select>`:'<div class="muted">Already paid in full. Mark as handed over.</div>'}<div class="two" style="margin-top:12px"><button data-a="plist">Back</button><button class="primary" data-a="confirm" data-id="${id}">Confirm and print</button></div>`)}
+function doCollect(id){const p=pre.find(x=>x.id===id),m=$("#cm")?$("#cm").value:"",bal=p.total-p.dep;
+ if(bal<=0){p.done=true;save("cc_pre",pre);hdr();return preHub("list")}
+ ask("Confirm balance payment",`${itemsH(p.lines)}<div class="row"><span>Balance received</span><b>${fmt(bal)}</b></div><div class="row"><span>Paid by</span><b>${esc(m)}</b></div>`,()=>{p.done=true;save("cc_pre",pre);record("balance",bal,m,{ref:p.no,items:[]});total=p.total;
+ receipt({sub:p.sub,d:p.d,tax:p.tax},bal,0,m,preX(p,`<div class="r"><span>Deposit paid earlier</span><span>${fmt(p.dep)}</span></div><div class="r"><b>Paid now</b><b>${fmt(bal)}</b></div>`),p.lines,p.no);window.print();
+ hdr();renderCart();preHub("list")})}
+function cancelForm(id){const p=pre.find(x=>x.id===id),n=daysTo(p.date),k=nz(S.refund,3),ok=n>=k;
+ openM(`<h3>Cancel ${esc(p.no||"")} ${esc(p.name)}?</h3><div class="muted">Pickup ${esc(p.date)} (${n>=0?n+" days away":"date has passed"})</div><div style="margin:12px 0"><b style="color:var(${ok?"--ok":"--bad"})">${ok?"Full refund: "+fmt(p.dep):"No refund. The "+fmt(p.dep)+" already paid is kept."}</b><div class="muted">Full refund applies when cancelled ${k} or more days before pickup.</div></div><div class="two"><button data-a="plist">Keep order</button><button class="primary" data-a="cancelok" data-id="${id}">Confirm cancellation</button></div>`)}
+function cancelOk(id){const p=pre.find(x=>x.id===id),ok=daysTo(p.date)>=(nz(S.refund,3));
+ p.done=true;p.cancel=ok?"refunded":"forfeited";save("cc_pre",pre);if(ok)record("refund",-p.dep,p.dm,{ref:p.no,items:[]});hdr();
+ openM(`<h3>Order cancelled</h3><div class="total">${ok?"Refund "+fmt(p.dep):"No refund"}</div><div class="muted">${ok?"Give the deposit back to the customer. It is recorded as a refund in the report.":"The deposit stays with the shop."}</div><button data-a="plist" style="margin-top:12px">Back to pre-orders</button>`)}
+function offList(){const rows=M.map((i,k)=>on(i)?"":`<div class="line"><div><b>${esc(i.name)}</b><div class="muted">${fmt(i.price)}, ${esc(i.cat||"Other")}</div></div><div class="two"><button data-a="act" data-k="${k}">Activate</button><button data-a="delx" data-k="${k}" aria-label="Delete ${esc(i.name)}">Delete</button></div></div>`).join("");
+ openM(`<h3>Inactive items</h3><div class="muted">Hidden from the cashier screen. Activate an item to bring it back with its price and stock.</div>${rows||'<div class="empty">No inactive items.</div>'}<button data-a="close" style="margin-top:14px">Close</button>`)}
+$("#mxc").onclick=e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=b.dataset.id;
+ if(a==="close")closeM();else if(a==="savepre")savePre();else if(a==="collect")collectForm(id);else if(a==="confirm")doCollect(id);else if(a==="cancelpre")cancelForm(id);else if(a==="cancelok")cancelOk(id);else if(a==="plist")preHub("list");else if(a==="pnew")preHub("new");
+ else if(a==="act"){M[+b.dataset.k].active=true;save("cc_menu",M);renderMenu();editor();offList()}
+ else if(a==="delx"){M.splice(+b.dataset.k,1);save("cc_menu",M);editor();offList()}};
+$("#mxc").onchange=e=>{if(e.target.id==="rd"&&e.target.value)report(e.target.value)};
+$("#mxc").oninput=()=>{if($("#ptot"))preCalc()};
+$("#mx").onclick=e=>{if(e.target.id==="mx")closeM()};
+$("#btnRep").onclick=()=>report();$("#btnPre").onclick=()=>preHub("list");$("#eOff").onclick=offList;
+const iso=d=>day(d.getTime());
+function expRange(k){const a=new Date();a.setHours(0,0,0,0);const b=new Date(a);if(k==="all")return["",""];if(k==="7")a.setDate(a.getDate()-6);else if(k==="month")a.setDate(1);return[iso(a),iso(b)]}
+function xRows(f,t){
+ const inr=ts=>{const d=day(ts);return(!f||d>=f)&&(!t||d<=t)},cr=p=>+String(p.id).slice(1);
+ const L=sales.filter(s=>inr(s.ts)).sort((a,b)=>a.ts-b.ts),lab={sale:"Store sale",deposit:"Pre-order deposit",balance:"Pre-order balance",refund:"Pre-order refund"};
+ const ref=s=>s.ref||String(s.no).padStart(4,"0"),tm=s=>new Date(s.ts).toTimeString().slice(0,5);
+ const items=type=>L.filter(s=>s.type===type).flatMap(s=>s.items.map(i=>({Date:day(s.ts),Receipt:ref(s),Item:i.n,Qty:i.q,"Unit price":i.p,"Line total":i.q*i.p})));
+ const days={};L.forEach(s=>{const k=day(s.ts),o=days[k]||(days[k]={Date:k,"Store sales":0,"Pre-order payments (net)":0,"Total received":0,Payments:0});if(s.type==="sale")o["Store sales"]+=s.amt;else o["Pre-order payments (net)"]+=s.amt;o["Total received"]+=s.amt;o.Payments++});
+ return{
+  sum:Object.values(days),
+  pay:L.map(s=>({Date:day(s.ts),Time:tm(s),Receipt:ref(s),Type:s.full?"Pre-order full payment":lab[s.type],Cashier:s.staff||"",Method:s.method,Amount:s.amt,Discount:s.d||0,Tax:s.tax||0,Voucher:s.voucher||""})),
+  sold:items("sale"),
+  po:pre.filter(p=>inr(cr(p))).map(p=>({"Pre-order":p.no||"",Created:day(cr(p)),Customer:p.name,Phone:p.phone,Pickup:p.date,Notes:p.note,Total:p.total,"Paid upfront":p.dep,Balance:p.total-p.dep,Voucher:p.voucher||"",Status:!p.done?"Open":p.cancel==="refunded"?"Cancelled, refunded":p.cancel==="forfeited"?"Cancelled, deposit kept":"Collected"})),
+  booked:items("deposit")}}
+function xInfo(){const x=xRows($("#xf").value,$("#xt").value);$("#xinfo").textContent=x.pay.length+" payments and "+x.po.length+" pre-orders in this period"}
+function exportForm(){const[a,b]=expRange("today");
+ openM(`<h3>Export to Excel</h3><div class="muted" style="margin-bottom:8px">Choose the period. The file has sheets for Summary, Payments, Items sold, Pre-orders and Pre-order items.</div><div class="chips"><button data-x="today">Today</button><button data-x="7">Last 7 days</button><button data-x="month">This month</button><button data-x="all">All time</button></div><div class="fgrid"><div><label for="xf">From</label><input id="xf" type="date" value="${a}"></div><div><label for="xt">To</label><input id="xt" type="date" value="${b}"></div></div><div class="muted" id="xinfo"></div><div class="two" style="margin-top:12px"><button data-a="close">Close</button><button class="primary" data-a="xdl">Download Excel</button></div><div id="xmsg" role="status" style="margin-top:8px"></div>`);xInfo()}
+const xe=v=>String(v).replace(/[<>&"]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c])).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,"");
+const xc=n=>{let s="";for(n++;n>0;n=Math.floor((n-1)/26))s=String.fromCharCode(65+(n-1)%26)+s;return s};
+function crc32(u){let t=crc32.t;if(!t){t=crc32.t=[];for(let n=0,c;n<256;n++){c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}}let r=-1;for(let i=0;i<u.length;i++)r=t[(r^u[i])&255]^(r>>>8);return(r^-1)>>>0}
+function zip(files){const enc=new TextEncoder(),parts=[],cen=[];let off=0,cs=0;
+ files.forEach(f=>{const nm=enc.encode(f.n),crc=crc32(f.d),n=f.d.length,h=new DataView(new ArrayBuffer(30)),c=new DataView(new ArrayBuffer(46));
+  h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(12,0x21,true);h.setUint32(14,crc,true);h.setUint32(18,n,true);h.setUint32(22,n,true);h.setUint16(26,nm.length,true);
+  c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);c.setUint16(14,0x21,true);c.setUint32(16,crc,true);c.setUint32(20,n,true);c.setUint32(24,n,true);c.setUint16(28,nm.length,true);c.setUint32(42,off,true);
+  parts.push(new Uint8Array(h.buffer),nm,f.d);cen.push(new Uint8Array(c.buffer),nm);off+=30+nm.length+n;cs+=46+nm.length});
+ const e=new DataView(new ArrayBuffer(22));e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,cs,true);e.setUint32(16,off,true);
+ return new Blob(parts.concat(cen,[new Uint8Array(e.buffer)]),{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})}
+function xlsx(sh){const U=t=>new TextEncoder().encode(t),H='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>',N='xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"',RL="http://schemas.openxmlformats.org/officeDocument/2006/relationships",PK="http://schemas.openxmlformats.org/package/2006/relationships",WS="application/vnd.openxmlformats-officedocument.spreadsheetml.";
+ const files=[
+ {n:"[Content_Types].xml",d:U(H+'<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="'+WS+'sheet.main+xml"/>'+sh.map((_,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="${WS}worksheet+xml"/>`).join("")+"</Types>")},
+ {n:"_rels/.rels",d:U(H+`<Relationships xmlns="${PK}"><Relationship Id="rId1" Type="${RL}/officeDocument" Target="xl/workbook.xml"/></Relationships>`)},
+ {n:"xl/workbook.xml",d:U(H+`<workbook ${N} xmlns:r="${RL}"><sheets>`+sh.map((s,i)=>`<sheet name="${xe(s[0])}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join("")+"</sheets></workbook>")},
+ {n:"xl/_rels/workbook.xml.rels",d:U(H+`<Relationships xmlns="${PK}">`+sh.map((_,i)=>`<Relationship Id="rId${i+1}" Type="${RL}/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join("")+"</Relationships>")}];
+ sh.forEach((s,i)=>{const rows=s[1],ks=rows.length?Object.keys(rows[0]):[],
+  cell=(v,r,c)=>typeof v==="number"&&isFinite(v)?`<c r="${xc(c)}${r}"><v>${v}</v></c>`:`<c r="${xc(c)}${r}" t="inlineStr"><is><t>${xe(v==null?"":v)}</t></is></c>`,
+  body=[ks].concat(rows.map(o=>ks.map(k=>o[k]))).map((r,ri)=>`<row r="${ri+1}">`+r.map((v,ci)=>cell(v,ri+1,ci)).join("")+"</row>").join(""),
+  cols=ks.length?"<cols>"+ks.map((k,ci)=>`<col min="${ci+1}" max="${ci+1}" width="${Math.min(40,Math.max.apply(null,[k.length].concat(rows.map(o=>String(o[k]==null?"":o[k]).length)))+2)}" customWidth="1"/>`).join("")+"</cols>":"";
+  files.push({n:`xl/worksheets/sheet${i+1}.xml`,d:U(H+`<worksheet ${N}>${cols}<sheetData>${body}</sheetData></worksheet>`)})});
+ return zip(files)}
+const isIOS=()=>/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+async function xDl(){const f=$("#xf").value,t=$("#xt").value,m=$("#xmsg"),x=xRows(f,t),bad=q=>{m.style.color="var(--bad)";m.textContent=q},ok=q=>{m.style.color="var(--ok)";m.textContent=q};
+ if(!x.pay.length&&!x.po.length)return bad("No payments or pre-orders in this period.");
+ const blob=xlsx([["Summary",x.sum],["Payments",x.pay],["Items sold (store)",x.sold],["Pre-orders",x.po],["Pre-order items",x.booked]]),fn="sales-"+(f||"start")+"_to_"+(t||"today")+".xlsx";
+ if(window.claude){let dl=null;try{dl=await claude.use("downloads")}catch(e){}
+  if(!dl)return bad("Downloads are blocked inside this Claude page on this device. Use the standalone version of the app (hosted as a normal website) to export.");
+  try{await dl.save({filename:fn,data:blob});return ok("Saved.")}catch(e){return bad(e&&e.code==="declined"?"Download cancelled.":"The file could not be saved here. Use the standalone version of the app to export.")}}
+ try{const file=new File([blob],fn,{type:blob.type});
+  if(isIOS()&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:fn});return ok("Choose Save to Files in the share sheet.")}}
+ catch(e){if(e&&e.name==="AbortError")return bad("Cancelled.")}
+ try{const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),8000);ok("Downloaded. Check your Downloads folder.")}catch(e){bad("The file could not be downloaded in this browser.")}}
+$("#mxc").addEventListener("click",e=>{const x=e.target.closest("[data-x]");if(x){const[a,b]=expRange(x.dataset.x);$("#xf").value=a;$("#xt").value=b;xInfo();return}
+ if(e.target.closest('[data-a="xdl"]'))xDl()});
+$("#mxc").addEventListener("change",e=>{if(e.target.id==="xf"||e.target.id==="xt")xInfo()});
+$("#btnExp").onclick=exportForm;
+let adm=load("cc_admin",null),afn=null,fails=0,lockUntil=0;
+async function H(pin,salt){const t=salt+":"+pin;if(window.crypto&&crypto.subtle){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}return String([...t].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,7))}
+const setForm=()=>`<h3>${adm?"Change admin PIN":"Set admin PIN"}</h3><div class="muted">Choose 4 to 8 digits. Only the admin should know it. It protects prices, products and settings.</div><label for="ap" style="margin-top:8px">New PIN</label><input id="ap" type="password" inputmode="numeric" autocomplete="new-password"><label for="ap2" style="margin-top:8px">Repeat PIN</label><input id="ap2" type="password" inputmode="numeric" autocomplete="new-password"><div class="two" style="margin-top:12px"><button data-a="close">Cancel</button><button class="primary" data-a="admset">Save PIN</button></div><div id="amsg" role="alert" style="color:var(--bad);margin-top:8px"></div>`;
+function adminGate(fn){afn=fn;
+ openM(adm?`<h3>Admin PIN</h3><div class="muted">Prices, products and settings are for admin only.</div><label for="ap" style="margin-top:8px">PIN</label><input id="ap" type="password" inputmode="numeric" autocomplete="off"><div class="two" style="margin-top:12px"><button data-a="close">Cancel</button><button class="primary" data-a="admok">Unlock</button></div><div id="amsg" role="alert" style="color:var(--bad);margin-top:8px"></div>`:setForm());
+ setTimeout(()=>{const x=$("#ap");if(x)x.focus()},50)}
+async function admOk(){const m=$("#amsg");if(Date.now()<lockUntil)return m.textContent="Too many wrong attempts. Wait 30 seconds.";
+ if(await H($("#ap").value,adm.salt)!==adm.hash){if(++fails>=5){lockUntil=Date.now()+30000;fails=0}m.textContent="Wrong PIN.";$("#ap").value="";return}
+ fails=0;closeM();if(afn)afn()}
+async function admSet(){const a=$("#ap").value,m=$("#amsg");if(!/^\d{4,8}$/.test(a))return m.textContent="Use 4 to 8 digits.";if(a!==$("#ap2").value)return m.textContent="The two PINs do not match.";
+ const salt=Math.random().toString(36).slice(2);adm={salt,hash:await H(a,salt)};save("cc_admin",adm);closeM();if(afn)afn()}
+$("#mxc").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;if(b.dataset.a==="admok")admOk();else if(b.dataset.a==="admset")admSet()});
+$("#mxc").addEventListener("keydown",e=>{if(e.key==="Enter"&&(e.target.id==="ap"||e.target.id==="ap2")){const b=$('[data-a="admok"],[data-a="admset"]');if(b)b.click()}});
+$("#eChg").onclick=()=>{afn=null;openM(setForm())};
+if(S.shop==="La Tangerine"||S.shop==="Sweet Crumbs Bakery"){S.shop="La Tangerine Cashier";save("cc_set",S)}
+if(M.length&&M[0].id==="d0"&&M[0].name==="Chocolate cake (whole)"){M=DEF;save("cc_menu",M)}
+const itemsH=ls=>`<div class="nl">${ls.map(l=>`<div class="row"><span>${l.qty} x ${esc(l.name)}</span><span>${fmt(l.price*l.qty)}</span></div>`).join("")}</div>`;
+let yesFn=null;
+function ask(title,body,yes){yesFn=yes;$("#mcc").innerHTML=`<h3>${title}</h3><div class="muted" style="margin-bottom:8px">Has the payment been received? Yes prints the receipt and saves the sale. No goes back with the order unchanged.</div>${body}<div class="two" style="margin-top:14px"><button id="mcNo">No, go back</button><button class="primary" id="mcYes">Yes, print and save</button></div>`;$("#mc").classList.add("open")}
+$("#mcc").addEventListener("click",e=>{if(e.target.id==="mcNo"){yesFn=null;$("#mc").classList.remove("open")}else if(e.target.id==="mcYes"){$("#mc").classList.remove("open");const f=yesFn;yesFn=null;if(f)f()}});
+$("#dq").onclick=e=>{const b=e.target.closest("button");if(b){$("#dType").value="%";$("#dVal").value=b.dataset.d;calc()}};
+renderMenu();renderCart();hdr();
+var bt=document.getElementById("boot");if(bt)bt.parentNode.removeChild(bt);
+</script>
+</body>
+</html>
