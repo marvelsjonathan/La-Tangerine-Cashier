@@ -62,7 +62,7 @@ label{font-size:13px;color:var(--mu);display:block;margin-bottom:2px}
  .custom{grid-template-columns:1fr 100px auto}
 }
 @media (prefers-reduced-motion:reduce){.order{transition:none}}
-.hbtn{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.hbtn select{width:auto}.hbtn button{padding:8px 10px}.item:disabled{opacity:.45;cursor:not-allowed}input:disabled,select:disabled,.quick button:disabled{opacity:.5;cursor:not-allowed}.erow{grid-template-columns:1fr 100px 110px 80px 60px 44px}@media (max-width:800px){.erow{grid-template-columns:1fr 80px 70px 60px 44px}}.erow.pr{grid-template-columns:1fr 110px 80px;align-items:center}.item s{color:var(--mu);font-weight:400;font-size:13px}.erow.pm{grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--bd);padding-bottom:10px;margin-bottom:12px}.erow.pm input{padding:8px 6px;font-size:16px}#pitems{max-height:38vh;overflow-y:auto;margin-bottom:8px}#mx{z-index:40}#mc{z-index:50}
+.hbtn{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.hbtn select{width:auto}.hbtn button{padding:8px 10px}.item:disabled{opacity:.45;cursor:not-allowed}input:disabled,select:disabled,.quick button:disabled{opacity:.5;cursor:not-allowed}.erow{grid-template-columns:1fr 100px 110px 80px 60px 44px}@media (max-width:800px){.erow{grid-template-columns:1fr 80px 70px 60px 44px}}.erow.pr{grid-template-columns:1fr 110px 80px;align-items:center}.item s{color:var(--mu);font-weight:400;font-size:13px}.erow.pm{grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--bd);padding-bottom:10px;margin-bottom:12px}.erow.pm input{padding:8px 6px;font-size:16px}#pitems{max-height:38vh;overflow-y:auto;margin-bottom:8px}#mx{z-index:40}#mc{z-index:50}#sy{flex-basis:100%;font-size:12px}#sy:empty{display:none}
 html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wrap}header h1{flex:1 1 auto;min-width:0}
 .hbtn{flex:0 1 auto;max-width:100%}
 @media (max-width:800px){h1{font-size:18px}.hbtn{width:100%;justify-content:flex-start}.hbtn button,.hbtn select{min-height:38px;padding:6px 10px;font-size:15px}.chips{max-width:100%}.grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
@@ -95,7 +95,7 @@ html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wr
  <section class="menu">
   <header>
    <h1 id="shopname"></h1>
-   <div class="hbtn"><select id="staff" aria-label="Cashier"></select><button id="btnPre">Pre-orders</button><button id="btnRep">Sales</button><button id="btnExp">Export</button><button id="btnEdit">Settings</button></div>
+   <div class="hbtn"><select id="staff" aria-label="Cashier"></select><button id="btnPre">Pre-orders</button><button id="btnRep">Sales</button><button id="btnExp">Export</button><button id="btnEdit">Settings</button></div><span id="sy" class="muted"></span>
   </header>
   <div class="chips" id="chips"></div>
   <div class="grid" id="grid"></div>
@@ -141,7 +141,7 @@ html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wr
    <div><label for="sShop">App name (top of screen)</label><input id="sShop"></div><div><label for="sRn">Name on receipts</label><input id="sRn"></div>
    <div><label for="sCur">Currency symbol</label><input id="sCur"></div>
    <div><label for="sTax">Tax (%)</label><input id="sTax" type="number" min="0" step="0.1"></div>
-   <div><label for="sFoot">Receipt message</label><input id="sFoot"></div><div><label for="sStaff">Cashier names (comma separated)</label><input id="sStaff"></div><div><label for="sRef">Full refund if pre-order cancelled this many days before pickup</label><input id="sRef" type="number" min="0"></div><div><label for="sMin">Minimum pre-order deposit (% of total)</label><input id="sMin" type="number" min="0" max="100"></div>
+   <div><label for="sFoot">Receipt message</label><input id="sFoot"></div><div><label for="sStaff">Cashier names (comma separated)</label><input id="sStaff"></div><div><label for="sRef">Full refund if pre-order cancelled this many days before pickup</label><input id="sRef" type="number" min="0"></div><div><label for="sMin">Minimum pre-order deposit (% of total)</label><input id="sMin" type="number" min="0" max="100"></div><div style="grid-column:1/3"><label for="sUrl">Sync database address (Firebase)</label><input id="sUrl" placeholder="https://your-project-default-rtdb.firebaseio.com"></div><div><label for="sCode">Sync code (secret, 16+ characters)</label><input id="sCode" autocomplete="off"></div><div style="align-self:end"><button id="sGen" type="button">Generate code</button></div>
   </div>
   <div id="erows"></div>
   <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
@@ -214,7 +214,7 @@ function renderMenu(){
 }
 function add(it){const l=cart.find(x=>x.id===it.id);if(tracked(it)&&(l?l.qty:0)>=+it.stock)return say("Only "+it.stock+" left of "+it.name+".",true);if(l)l.qty++;else cart.push({id:it.id,name:it.name,price:eff(it),orig:+it.price,qty:1});renderCart()}
 function renderCart(){
- $("#rno").textContent="#"+peek("cc_rno");
+ $("#rno").textContent=pendNo?"#"+pendNo:syOn()?"":"#"+peek("cc_rno");
  $("#lines").innerHTML=cart.length?cart.map((l,i)=>`<div class="cl"><div><b>${esc(l.name)}</b><div class="muted">${l.orig>l.price?`<s>${fmt(l.orig)}</s> `:""}${fmt(l.price)} each</div></div><span class="q"><button data-m="${i}" aria-label="Remove one">−</button><span>${l.qty}</span><button data-p="${i}" aria-label="Add one">+</button></span><b>${fmt(l.price*l.qty)}</b></div>`).join(""):'<div class="empty">Tap an item to start the order.</div>';
  const n=cart.reduce((s,l)=>s+l.qty,0);
  $("#barN").textContent=n+(n===1?" item":" items");
@@ -250,15 +250,16 @@ function receipt(t,paid,chg,method,extra="",lines=cart,no=peek("cc_rno")){
  ${method==="Cash"?`<div class="r"><span>Change</span><span>${fmt(chg)}</span></div>`:""}
  ${extra}<hr><div class="c">${esc(S.foot)}</div>`;
 }
-function pay(){
+async function pay(){
  if(!cart.length)return say("Add at least one item first.",true);
  const method=$("#method").value,c=+$("#cash").value||0;
  if(method==="Cash"&&c<total)return say("Cash received is less than the total.",true);
  const sm=`${itemsH(cart)}<div class="row"><span>Items</span><b>${cart.reduce((q,l)=>q+l.qty,0)}</b></div><div class="row"><span>Total</span><b>${fmt(total)}</b></div><div class="row"><span>Paid by</span><b>${esc(method)}</b></div>${method==="Cash"?`<div class="row"><span>Cash received</span><b>${fmt(c)}</b></div><div class="row"><span>Change</span><b>${fmt(c-total)}</b></div>`:""}`;
+ let no;try{$("#btnPay").disabled=true;no=pendNo||(pendNo=await reserve("rno"))}finally{$("#btnPay").disabled=false}
  ask("Confirm payment",sm,()=>{const t=calc();
- receipt(t,method==="Cash"?c:total,method==="Cash"?c-total:0,method);
+ receipt(t,method==="Cash"?c:total,method==="Cash"?c-total:0,method,"",cart,no);
  window.print();
- record("sale",total,method,Object.assign({voucher:$("#vcode").value.trim()},t));useStock(cart);bump("cc_rno");newOrder();say("Order complete. Ready for the next customer.");})
+ record("sale",total,method,Object.assign({ref:no,voucher:$("#vcode").value.trim()},t));pendNo=null;useStock(cart);bump("cc_rno");newOrder();say("Order complete. Ready for the next customer.");})
 }
 function newOrder(){cart=[];$("#cash").value="";$("#dVal").value=0;$("#vcode").value="";renderCart();$("#order").classList.remove("open")}
 
@@ -280,7 +281,7 @@ $("#cAdd").onclick=()=>{const n=$("#cName").value.trim(),p=+$("#cPrice").value;
  add({id:"c"+Date.now(),name:n,price:p});$("#cName").value="";$("#cPrice").value="";$("#msg").textContent=""};
 
 function editor(){
- $("#sShop").value=S.shop;$("#sRn").value=S.rname||S.shop;$("#sCur").value=S.cur;$("#sTax").value=S.tax;$("#sFoot").value=S.foot;$("#sStaff").value=S.staff;$("#sRef").value=nz(S.refund,3);$("#sMin").value=nz(S.minDep,30);
+ $("#sShop").value=S.shop;$("#sRn").value=S.rname||S.shop;$("#sCur").value=S.cur;$("#sTax").value=S.tax;$("#sFoot").value=S.foot;$("#sStaff").value=S.staff;$("#sRef").value=nz(S.refund,3);$("#sMin").value=nz(S.minDep,30);$("#sUrl").value=SY.url;$("#sCode").value=SY.code;
  $("#erows").innerHTML=M.map((i,k)=>!on(i)?"":`<div class="erow"><input data-k="${k}" data-f="name" value="${esc(i.name)}" aria-label="Name"><input data-k="${k}" data-f="price" type="number" min="0" value="${i.price}" aria-label="Price"><input class="cat" data-k="${k}" data-f="cat" value="${esc(i.cat||"")}" aria-label="Category"><input data-k="${k}" data-f="stock" type="number" min="0" placeholder="Stock" value="${tracked(i)?i.stock:""}" aria-label="Stock (empty = not tracked)"><button data-off="${k}" title="Make inactive">Hide</button><button data-del="${k}" aria-label="Delete item">×</button></div><div class="erow pm"><div><label>Promo price</label><input data-k="${k}" data-f="promo" type="number" min="0" value="${nz(i.promo,"")}"></div><div><label>Promo from</label><input data-k="${k}" data-f="pFrom" type="date" value="${i.pFrom||""}"></div><div><label>Promo until</label><input data-k="${k}" data-f="pTo" type="date" value="${i.pTo||""}"></div></div>`).join("");
 }
 $("#btnEdit").onclick=()=>adminGate(()=>{editor();$("#modal").classList.add("open")});
@@ -289,7 +290,7 @@ $("#erows").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dat
 $("#eAdd").onclick=()=>{M.push({id:"m"+Date.now(),name:"New item",price:0,cat:cat==="All"?"Pastries":cat});editor()};
 $("#eDone").onclick=()=>{
  S.shop=$("#sShop").value.trim()||"La Tangerine Cashier";S.rname=$("#sRn").value.trim()||S.shop;S.cur=$("#sCur").value;S.tax=Math.max(0,+$("#sTax").value||0);S.foot=$("#sFoot").value;S.staff=$("#sStaff").value;S.refund=$("#sRef").value===""?3:Math.max(0,+$("#sRef").value);S.minDep=$("#sMin").value===""?30:Math.min(100,Math.max(0,+$("#sMin").value));
- save("cc_set",S);save("cc_menu",M);cart=cart.filter(l=>l.id[0]==="c"||M.some(i=>i.id===l.id));
+ save("cc_set",S);save("cc_menu",M);{const nu=$("#sUrl").value.trim(),nc=$("#sCode").value.trim(),ch=nu!==SY.url||nc!==SY.code;SY={url:nu,code:nc};save("cc_sync",SY);if(ch)syncNow(true);else{pushSettings();pushMenu()}}cart=cart.filter(l=>l.id[0]==="c"||M.some(i=>i.id===l.id));
  $("#modal").classList.remove("open");renderMenu();renderCart();hdr()};
 
 /* staff, stock, sales history, pre-orders */
@@ -298,8 +299,8 @@ let staff=load("cc_staff",""),sales=load("cc_sales",[]),pre=load("cc_pre",[]),pr
 const names=()=>String(S.staff||"").split(",").map(s=>s.trim()).filter(Boolean);
 function hdr(){const n=names();if(!n.includes(staff))staff=n[0]||"";$("#staff").innerHTML=n.map(x=>`<option${x===staff?" selected":""}>${esc(x)}</option>`).join("");$("#btnPre").textContent="Pre-orders ("+pre.filter(p=>!p.done).length+")"}
 $("#staff").onchange=e=>{staff=e.target.value;save("cc_staff",staff)};
-function record(type,amt,method,x){sales.push(Object.assign({no:N,ref:peek("cc_rno"),ts:Date.now(),staff,type,method,amt,items:cart.map(l=>({n:l.name,q:l.qty,p:l.price}))},x));save("cc_sales",sales)}
-function useStock(lines,back){lines.forEach(l=>{const m=M.find(i=>i.id===l.id);if(m&&tracked(m))m.stock=Math.max(0,+m.stock+(back?l.qty:-l.qty))});save("cc_menu",M);renderMenu()}
+function record(type,amt,method,x){const s=Object.assign({no:N,ref:peek("cc_rno"),ts:Date.now(),staff,type,method,amt,items:cart.map(l=>({n:l.name,q:l.qty,p:l.price}))},x);skey(s);sales.push(s);save("cc_sales",sales);send("PUT","sales/"+s.k,s)}
+function useStock(lines,back){lines.forEach(l=>{const m=M.find(i=>i.id===l.id);if(m&&tracked(m)){const q=back?l.qty:-l.qty;m.stock=Math.max(0,+m.stock+q);send("PATCH","menu/"+m.id,{stock:{".sv":{increment:q}}})}});save("cc_menu",M);renderMenu()}
 function openM(h){$("#mxc").innerHTML=h;$("#mx").classList.add("open")}
 const closeM=()=>$("#mx").classList.remove("open");
 const day=ts=>{const d=new Date(ts);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
@@ -328,27 +329,28 @@ function listHTML(){const o=pre.filter(p=>!p.done).sort((a,b)=>a.date.localeComp
  return o.map(p=>`<div class="line"><div><b>${esc(p.no||"")} ${esc(p.name)}</b> <span class="muted">${esc(p.phone)}</span><div class="muted">Pickup ${esc(p.date)}${p.note?", "+esc(p.note):""}</div><div class="muted">${p.lines.map(l=>l.qty+" x "+esc(l.name)).join(", ")}</div></div><div style="text-align:right"><b>${p.total-p.dep>0?"Balance "+fmt(p.total-p.dep):"Paid in full"}</b><div class="muted">of ${fmt(p.total)}</div></div><div class="two" style="grid-column:1/3"><button data-a="cancelpre" data-id="${p.id}">Cancel order</button><button class="primary" data-a="collect" data-id="${p.id}">${p.total-p.dep>0?"Collect balance":"Hand over"}</button></div></div>`).join("")||'<div class="empty">No open pre-orders.</div>'}
 function preHub(t){const n=pre.filter(p=>!p.done).length;
  openM(`<h3>Pre-orders</h3><div class="muted" style="margin-bottom:8px">Kept separate from store sales. Pre-orders never use store stock.</div><div class="chips"><button class="${t==="new"?"":"on"}" data-a="plist">Open orders (${n})</button><button class="${t==="new"?"on":""}" data-a="pnew">New pre-order</button></div>${t==="new"?newForm():listHTML()}<button data-a="close" style="margin-top:14px">Close</button>`);if(t==="new")preCalc()}
-function savePre(){const {L,t,tt}=preCalc(),v=id=>$("#"+id).value.trim();
+async function savePre(){const {L,t,tt}=preCalc(),v=id=>$("#"+id).value.trim();
  if(!v("pn")||!v("pd"))return $("#pmsg").textContent="Enter the customer name and pickup date.";
  if(!L.length)return $("#pmsg").textContent="Enter a quantity for at least one item.";
  const full=v("pk")==="full",mn=Math.ceil(tt*(nz(S.minDep,30))/100),dep=full?tt:v("pa")===""?mn:+v("pa");
  if(!(dep>0&&dep>=mn&&dep<=tt))return $("#pmsg").textContent="Deposit must be at least "+fmt(mn)+" ("+(nz(S.minDep,30))+"% of the total) and not more than the total.";
- ask("Confirm pre-order payment",`${itemsH(L)}<div class="row"><span>Order total</span><b>${fmt(tt)}</b></div><div class="row"><span>Paid now (${full?"full":"deposit"})</span><b>${fmt(dep)}</b></div><div class="row"><span>Balance due</span><b>${fmt(tt-dep)}</b></div><div class="row"><span>Paid by</span><b>${esc(v("pm"))}</b></div>`,()=>{const no="PO-"+peek("cc_pno2"),p={id:"p"+Date.now(),no,name:v("pn"),phone:v("pp"),date:v("pd"),note:v("pt"),total:tt,dep,sub:t.sub,d:t.d,tax:t.tax,lines:L,dm:v("pm"),voucher:v("pv"),done:false};
- pre.push(p);bump("cc_pno2");save("cc_pre",pre);
+ const no0=pendPO||(pendPO="PO-"+await reserve("pno"));
+ ask("Confirm pre-order payment",`${itemsH(L)}<div class="row"><span>Order total</span><b>${fmt(tt)}</b></div><div class="row"><span>Paid now (${full?"full":"deposit"})</span><b>${fmt(dep)}</b></div><div class="row"><span>Balance due</span><b>${fmt(tt-dep)}</b></div><div class="row"><span>Paid by</span><b>${esc(v("pm"))}</b></div>`,()=>{const no=no0,p={id:"p"+Date.now(),no,name:v("pn"),phone:v("pp"),date:v("pd"),note:v("pt"),total:tt,dep,sub:t.sub,d:t.d,tax:t.tax,lines:L,dm:v("pm"),voucher:v("pv"),done:false};
+ pre.push(p);bump("cc_pno2");save("cc_pre",pre);pendPO=null;send("PUT","pre/"+pkey(p),p);
  record("deposit",dep,p.dm,{ref:no,full:dep>=tt,voucher:v("pv"),items:L.map(l=>({n:l.name,q:l.qty,p:l.price}))});
  total=tt;receipt(t,dep,0,p.dm,preX(p,`${tt-dep>0?`<div class="r"><b>Balance due</b><b>${fmt(tt-dep)}</b></div>`:`<div class="c"><b>PAID IN FULL</b></div>`}`),L,no);window.print();
  hdr();renderCart();preHub("list")})}
 function collectForm(id){const p=pre.find(x=>x.id===id);
  openM(`<h3>Collect balance: ${esc(p.name)}</h3><div class="total">${fmt(p.total-p.dep)}</div>${p.total-p.dep>0?`<label for="cm">Paid by</label><select id="cm">${PM}</select>`:'<div class="muted">Already paid in full. Mark as handed over.</div>'}<div class="two" style="margin-top:12px"><button data-a="plist">Back</button><button class="primary" data-a="confirm" data-id="${id}">Confirm and print</button></div>`)}
 function doCollect(id){const p=pre.find(x=>x.id===id),m=$("#cm")?$("#cm").value:"",bal=p.total-p.dep;
- if(bal<=0){p.done=true;save("cc_pre",pre);hdr();return preHub("list")}
- ask("Confirm balance payment",`${itemsH(p.lines)}<div class="row"><span>Balance received</span><b>${fmt(bal)}</b></div><div class="row"><span>Paid by</span><b>${esc(m)}</b></div>`,()=>{p.done=true;save("cc_pre",pre);record("balance",bal,m,{ref:p.no,items:[]});total=p.total;
+ if(bal<=0){p.done=true;save("cc_pre",pre);send("PATCH","pre/"+pkey(p),{done:true});hdr();return preHub("list")}
+ ask("Confirm balance payment",`${itemsH(p.lines)}<div class="row"><span>Balance received</span><b>${fmt(bal)}</b></div><div class="row"><span>Paid by</span><b>${esc(m)}</b></div>`,()=>{p.done=true;save("cc_pre",pre);send("PATCH","pre/"+pkey(p),{done:true});record("balance",bal,m,{ref:p.no,items:[]});total=p.total;
  receipt({sub:p.sub,d:p.d,tax:p.tax},bal,0,m,preX(p,`<div class="r"><span>Deposit paid earlier</span><span>${fmt(p.dep)}</span></div><div class="r"><b>Paid now</b><b>${fmt(bal)}</b></div>`),p.lines,p.no);window.print();
  hdr();renderCart();preHub("list")})}
 function cancelForm(id){const p=pre.find(x=>x.id===id),n=daysTo(p.date),k=nz(S.refund,3),ok=n>=k;
  openM(`<h3>Cancel ${esc(p.no||"")} ${esc(p.name)}?</h3><div class="muted">Pickup ${esc(p.date)} (${n>=0?n+" days away":"date has passed"})</div><div style="margin:12px 0"><b style="color:var(${ok?"--ok":"--bad"})">${ok?"Full refund: "+fmt(p.dep):"No refund. The "+fmt(p.dep)+" already paid is kept."}</b><div class="muted">Full refund applies when cancelled ${k} or more days before pickup.</div></div><div class="two"><button data-a="plist">Keep order</button><button class="primary" data-a="cancelok" data-id="${id}">Confirm cancellation</button></div>`)}
 function cancelOk(id){const p=pre.find(x=>x.id===id),ok=daysTo(p.date)>=(nz(S.refund,3));
- p.done=true;p.cancel=ok?"refunded":"forfeited";save("cc_pre",pre);if(ok)record("refund",-p.dep,p.dm,{ref:p.no,items:[]});hdr();
+ p.done=true;p.cancel=ok?"refunded":"forfeited";save("cc_pre",pre);send("PATCH","pre/"+pkey(p),{done:true,cancel:p.cancel});if(ok)record("refund",-p.dep,p.dm,{ref:p.no,items:[]});hdr();
  openM(`<h3>Order cancelled</h3><div class="total">${ok?"Refund "+fmt(p.dep):"No refund"}</div><div class="muted">${ok?"Give the deposit back to the customer. It is recorded as a refund in the report.":"The deposit stays with the shop."}</div><button data-a="plist" style="margin-top:12px">Back to pre-orders</button>`)}
 function offList(){const rows=M.map((i,k)=>on(i)?"":`<div class="line"><div><b>${esc(i.name)}</b><div class="muted">${fmt(i.price)}, ${esc(i.cat||"Other")}</div></div><div class="two"><button data-a="act" data-k="${k}">Activate</button><button data-a="delx" data-k="${k}" aria-label="Delete ${esc(i.name)}">Delete</button></div></div>`).join("");
  openM(`<h3>Inactive items</h3><div class="muted">Hidden from the cashier screen. Activate an item to bring it back with its price and stock.</div>${rows||'<div class="empty">No inactive items.</div>'}<button data-a="close" style="margin-top:14px">Close</button>`)}
@@ -359,7 +361,7 @@ $("#mxc").onclick=e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=
 $("#mxc").onchange=e=>{if(e.target.id==="rd"&&e.target.value)report(e.target.value)};
 $("#mxc").oninput=()=>{if($("#ptot"))preCalc()};
 $("#mx").onclick=e=>{if(e.target.id==="mx")closeM()};
-$("#btnRep").onclick=()=>report();$("#btnPre").onclick=()=>preHub("list");$("#eOff").onclick=offList;
+$("#btnRep").onclick=async()=>{await pullSales();report()};$("#btnPre").onclick=()=>preHub("list");$("#eOff").onclick=offList;
 const iso=d=>day(d.getTime());
 function expRange(k){const a=new Date();a.setHours(0,0,0,0);const b=new Date(a);if(k==="all")return["",""];if(k==="7")a.setDate(a.getDate()-6);else if(k==="month")a.setDate(1);return[iso(a),iso(b)]}
 function xRows(f,t){
@@ -413,7 +415,7 @@ async function xDl(){const f=$("#xf").value,t=$("#xt").value,m=$("#xmsg"),x=xRow
 $("#mxc").addEventListener("click",e=>{const x=e.target.closest("[data-x]");if(x){const[a,b]=expRange(x.dataset.x);$("#xf").value=a;$("#xt").value=b;xInfo();return}
  if(e.target.closest('[data-a="xdl"]'))xDl()});
 $("#mxc").addEventListener("change",e=>{if(e.target.id==="xf"||e.target.id==="xt")xInfo()});
-$("#btnExp").onclick=exportForm;
+$("#btnExp").onclick=async()=>{await pullSales();exportForm()};
 let adm=load("cc_admin",null),afn=null,fails=0,lockUntil=0;
 async function H(pin,salt){const t=salt+":"+pin;if(window.crypto&&crypto.subtle){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}return String([...t].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,7))}
 const setForm=()=>`<h3>${adm?"Change admin PIN":"Set admin PIN"}</h3><div class="muted">Choose 4 to 8 digits. Only the admin should know it. It protects prices, products and settings.</div><label for="ap" style="margin-top:8px">New PIN</label><input id="ap" type="password" inputmode="numeric" autocomplete="new-password"><label for="ap2" style="margin-top:8px">Repeat PIN</label><input id="ap2" type="password" inputmode="numeric" autocomplete="new-password"><div class="two" style="margin-top:12px"><button data-a="close">Cancel</button><button class="primary" data-a="admset">Save PIN</button></div><div id="amsg" role="alert" style="color:var(--bad);margin-top:8px"></div>`;
@@ -424,7 +426,7 @@ async function admOk(){const m=$("#amsg");if(Date.now()<lockUntil)return m.textC
  if(await H($("#ap").value,adm.salt)!==adm.hash){if(++fails>=5){lockUntil=Date.now()+30000;fails=0}m.textContent="Wrong PIN.";$("#ap").value="";return}
  fails=0;closeM();if(afn)afn()}
 async function admSet(){const a=$("#ap").value,m=$("#amsg");if(!/^\d{4,8}$/.test(a))return m.textContent="Use 4 to 8 digits.";if(a!==$("#ap2").value)return m.textContent="The two PINs do not match.";
- const salt=Math.random().toString(36).slice(2);adm={salt,hash:await H(a,salt)};save("cc_admin",adm);closeM();if(afn)afn()}
+ const salt=Math.random().toString(36).slice(2);adm={salt,hash:await H(a,salt)};save("cc_admin",adm);pushSettings();closeM();if(afn)afn()}
 $("#mxc").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;if(b.dataset.a==="admok")admOk();else if(b.dataset.a==="admset")admSet()});
 $("#mxc").addEventListener("keydown",e=>{if(e.key==="Enter"&&(e.target.id==="ap"||e.target.id==="ap2")){const b=$('[data-a="admok"],[data-a="admset"]');if(b)b.click()}});
 $("#eChg").onclick=()=>{afn=null;openM(setForm())};
@@ -434,8 +436,41 @@ const itemsH=ls=>`<div class="nl">${ls.map(l=>`<div class="row"><span>${l.qty} x
 let yesFn=null;
 function ask(title,body,yes){yesFn=yes;$("#mcc").innerHTML=`<h3>${title}</h3><div class="muted" style="margin-bottom:8px">Has the payment been received? Yes prints the receipt and saves the sale. No goes back with the order unchanged.</div>${body}<div class="two" style="margin-top:14px"><button id="mcNo">No, go back</button><button class="primary" id="mcYes">Yes, print and save</button></div>`;$("#mc").classList.add("open")}
 $("#mcc").addEventListener("click",e=>{if(e.target.id==="mcNo"){yesFn=null;$("#mc").classList.remove("open")}else if(e.target.id==="mcYes"){$("#mc").classList.remove("open");const f=yesFn;yesFn=null;if(f)f()}});
+/* ---- sync between devices (Firebase Realtime Database over REST) ---- */
+let SY=load("cc_sync",{url:"",code:""}),out=load("cc_out",[]),syBusy=false,pendNo=null,pendPO=null,sig="";
+const syOn=()=>!!(SY.url&&SY.code&&SY.code.length>=16);
+const syBase=()=>SY.url.replace(/\/+$/,"")+"/shops/"+encodeURIComponent(SY.code);
+const syStat=(t,bad)=>{const e=$("#sy");if(e){e.textContent=t;e.style.color=bad?"var(--bad)":""}};
+async function api(m,p,b,q){const r=await fetch(syBase()+"/"+p+".json"+(q||""),{method:m,body:b===undefined?undefined:JSON.stringify(b)});if(!r.ok){const e=new Error("HTTP "+r.status);e.status=r.status;throw e}return r.json()}
+async function send(m,p,b){if(!syOn())return;try{await api(m,p,b)}catch(e){if(!e.status||e.status>=500){out.push({m,p,b});save("cc_out",out)}else syStat("Sync error "+e.status+": check the database rules",true)}}
+async function flush(){if(!syOn()||!out.length)return;const q=out.slice();out=[];save("cc_out",out);for(const o of q)await send(o.m,o.p,o.b)}
+function skey(s){return s.k||(s.k=s.ts+"_"+s.type+"_"+String(s.ref||s.no).replace(/[.$#\[\]\/]/g,"-"))}
+const pkey=p=>p.no||p.id;
+function pushSettings(){const o={};Object.keys(S).forEach(k=>o[k]=S[k]);o.adm=adm||null;send("PUT","settings",o)}
+function pushMenu(){const o={};M.forEach((i,k)=>{const x={};Object.keys(i).forEach(f=>x[f]=i[f]);x._o=k;o[i.id]=x});send("PUT","menu",M.length?o:null)}
+async function reserve(kind){const d=ddmmyy(),loc=()=>peek(kind==="rno"?"cc_rno":"cc_pno2");if(!syOn())return loc();
+ for(let i=0;i<6;i++){try{const r=await api("GET",kind,undefined,'?orderBy="$key"&startAt="'+d+'0000"&endAt="'+d+'9999"&limitToLast=1'),last=r&&Object.keys(r)[0],n=d+String((last?+last.slice(6):0)+1).padStart(4,"0");
+  await api("PUT",kind+"/"+n,{t:Date.now()});return n}catch(e){if(e.status===401||e.status===403)continue;break}}
+ return loc()}
+async function pull(first){const g=p=>api("GET",p),[rs,rm,rp]=await Promise.all([g("settings"),g("menu"),g("pre")]);
+ if(!rs&&!rm){if(first){pushSettings();pushMenu();pre.forEach(p=>send("PUT","pre/"+pkey(p),p));await pullSales(true)}return}
+ if(first){pre.forEach(p=>{if(!rp||!rp[pkey(p)])send("PUT","pre/"+pkey(p),p)});pullSales(true)}
+ const sg=JSON.stringify([rs,rm,rp]);if(sg===sig||$("#modal").classList.contains("open"))return;sig=sg;
+ if(rs){Object.keys(rs).forEach(k=>{if(k!=="adm")S[k]=rs[k]});save("cc_set",S);if(rs.adm&&(!adm||adm.hash!==rs.adm.hash)){adm=rs.adm;save("cc_admin",adm)}}
+ if(rm){M=Object.keys(rm).map(k=>rm[k]).sort((a,b)=>(a._o||0)-(b._o||0)).map(i=>{const x={};Object.keys(i).forEach(f=>{if(f!=="_o")x[f]=i[f]});return x});save("cc_menu",M)}
+ if(rp){const m={};pre.forEach(p=>m[pkey(p)]=p);Object.keys(rp).forEach(k=>{const p=rp[k];p.lines=p.lines||[];m[k]=p});pre=Object.keys(m).map(k=>m[k]);save("cc_pre",pre)}
+ renderMenu();renderCart();hdr()}
+async function pullSales(up){if(!syOn())return;try{await flush();const r=await api("GET","sales"),m={};sales.forEach(s=>m[skey(s)]=s);
+ if(up)sales.forEach(s=>{if(!r||!r[s.k])send("PUT","sales/"+s.k,s)});
+ if(r)Object.keys(r).forEach(k=>{const s=r[k];s.items=s.items||[];s.k=k;m[k]=s});
+ sales=Object.keys(m).map(k=>m[k]).sort((a,b)=>a.ts-b.ts);save("cc_sales",sales)}catch(e){syStat("Offline: showing this device data only",true)}}
+async function syncNow(first){if(!syOn()){syStat("");return}if(syBusy)return;syBusy=true;syStat("Syncing...");
+ try{await flush();await pull(first);syStat("Synced "+new Date().toTimeString().slice(0,5))}
+ catch(e){syStat(e.status?"Sync error "+e.status+": check the database address and rules":"Offline: saving on this device",true)}finally{syBusy=false}}
+setInterval(()=>syncNow(false),15000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)syncNow(false)});
+$("#sGen").onclick=()=>{const a=new Uint8Array(24),c="abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";(window.crypto||{getRandomValues:x=>x.forEach((_,i)=>x[i]=Math.random()*256)}).getRandomValues(a);$("#sCode").value=Array.from(a).map(x=>c[x%c.length]).join("")};
 $("#dq").onclick=e=>{const b=e.target.closest("button");if(b){$("#dType").value="%";$("#dVal").value=b.dataset.d;calc()}};
-renderMenu();renderCart();hdr();
+renderMenu();renderCart();hdr();syncNow(true);
 var bt=document.getElementById("boot");if(bt)bt.parentNode.removeChild(bt);
 </script>
 </body>
