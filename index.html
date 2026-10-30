@@ -4,13 +4,11 @@
 <meta charset="utf-8">
 <script>function showErr(m){var b=document.getElementById("boot");if(!b){b=document.createElement("div");b.id="boot";(document.body||document.documentElement).appendChild(b)}b.style.cssText="position:fixed;left:0;right:0;top:0;z-index:99;background:#b00020;color:#fff;padding:12px;font:14px/1.4 system-ui,sans-serif;white-space:pre-wrap;word-break:break-all";b.textContent="The app could not start. Please send a screenshot of this message.\n"+m+"\n"+navigator.userAgent}window.addEventListener("error",function(e){showErr((e.message||"error")+" (line "+e.lineno+")")});window.addEventListener("unhandledrejection",function(e){showErr(String(e.reason))});</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="La Tangerine"><meta name="theme-color" content="#b8135a"><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEU0lEQVR4nO3dv46MYRTH8XfFn0KhWCR6N7CiVFCIxCWsuAeUrkGUaiGuwWoVohGNRE2isRpRSFSKSd5MjN/s/Hmfc37nme+nnvA+J989z+xmjb2j/cMB+J9T2Q8AX8QBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oB0OvsB0tz58Wr1F7+5eK/dk9ja25GPYFgrhVXsQi49xzF5EEqvoXQYR1gTizqrpKs4ErOY100iPcRh0sSi6pXUjsM2i3l1E6kaR4ks5lVMpOQPwcqVMdR85mKbo+KI/1FohVTaHB2UMZQ6RY3NUWigq/NfIQU2R5dlDBXO5R6H/wS3YX4632vFfHDT8rxiTDfHTpUxuJ7XMQ7PSbVmeGq7OAxnFMbt7F5xuE0nntUEjOKwmksinzm4xOEzEQcm07CIw2QWVhxmYhEHPOXH4fAl4il9MslxpJ/fXO58MuOgjFUkTin/WoGttDhYG6vLmlVOHJSxrpSJca1ASoiDtbGZ+LlFx0EZ2wieHtcKpNA4WBvbi5whmwNSXBysjamETZLNAYk4IAXFwZ0yrZh5Fvuoyd9fj99ee7D8NWcvXbj1+dmJf9TH+0+/v/4wzWNt5ODFw8t3ryc+wIkiNgdro4WAqfKeAxJxQGoeB3dKO61ny+aARByQiANS2zh4w9Fa0wkX+yHYhA5ePlr9xb8+fXl38/Hy15y/euXG+yfbPZQXrhVIxAGJOCARB6SGcfCtSox2c2ZzQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oDUMA7P//GwP+3mzOaARByQiAMScUAiDkht4+AbltaaTpjNAYk4IHX4D6n/HP/cctne/vb81LkzUz1PXc03B2872mk9W64VSMQBKSIObpYWAqbK5oAUFAfLY1ox82RzQCIOSHtH+4dhfxkf5zKJsDuazQEpNA7elm4vcoZsDkjRcbA8thE8vYTNQR+biZ8b1wqknDhYHutKmVja5qCP1WXNimsFUmYcLI9VJE4peXPQx3K588m/VuhDSZ9MfhywZRFH+peIIYeZWMQxeMzCh8k0XOIYbCaSzmcORnEMTnPJYjUBrzgGs+kEczu7XRyD34xiGJ7aMY7BclJNeZ439BeMN9D97yR7ZjFjujlGzrPbnvnp3OMY7Ce4Mf9zuV8r87q5YvyzmCmwOUZVZrpcoVNU2hyjoiukUBYzlTbHqNyUh5rPXHJzjEqskIpZzNSOY8Y2kbpZzPQQx8ikkupNjLqKYyYxkW6ymOkwjlFYJZ01Meo5jnmTh9JrEPN2JY5Fa+WyCyks2t04cKKSPwRDDOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAPSX3lcCogfwNzzAAAAAElFTkSuQmCC"><link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEU0lEQVR4nO3dv46MYRTH8XfFn0KhWCR6N7CiVFCIxCWsuAeUrkGUaiGuwWoVohGNRE2isRpRSFSKSd5MjN/s/Hmfc37nme+nnvA+J989z+xmjb2j/cMB+J9T2Q8AX8QBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oB0OvsB0tz58Wr1F7+5eK/dk9ja25GPYFgrhVXsQi49xzF5EEqvoXQYR1gTizqrpKs4ErOY100iPcRh0sSi6pXUjsM2i3l1E6kaR4ks5lVMpOQPwcqVMdR85mKbo+KI/1FohVTaHB2UMZQ6RY3NUWigq/NfIQU2R5dlDBXO5R6H/wS3YX4632vFfHDT8rxiTDfHTpUxuJ7XMQ7PSbVmeGq7OAxnFMbt7F5xuE0nntUEjOKwmksinzm4xOEzEQcm07CIw2QWVhxmYhEHPOXH4fAl4il9MslxpJ/fXO58MuOgjFUkTin/WoGttDhYG6vLmlVOHJSxrpSJca1ASoiDtbGZ+LlFx0EZ2wieHtcKpNA4WBvbi5whmwNSXBysjamETZLNAYk4IAXFwZ0yrZh5Fvuoyd9fj99ee7D8NWcvXbj1+dmJf9TH+0+/v/4wzWNt5ODFw8t3ryc+wIkiNgdro4WAqfKeAxJxQGoeB3dKO61ny+aARByQiANS2zh4w9Fa0wkX+yHYhA5ePlr9xb8+fXl38/Hy15y/euXG+yfbPZQXrhVIxAGJOCARB6SGcfCtSox2c2ZzQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oDUMA7P//GwP+3mzOaARByQiAMScUAiDkht4+AbltaaTpjNAYk4IHX4D6n/HP/cctne/vb81LkzUz1PXc03B2872mk9W64VSMQBKSIObpYWAqbK5oAUFAfLY1ox82RzQCIOSHtH+4dhfxkf5zKJsDuazQEpNA7elm4vcoZsDkjRcbA8thE8vYTNQR+biZ8b1wqknDhYHutKmVja5qCP1WXNimsFUmYcLI9VJE4peXPQx3K588m/VuhDSZ9MfhywZRFH+peIIYeZWMQxeMzCh8k0XOIYbCaSzmcORnEMTnPJYjUBrzgGs+kEczu7XRyD34xiGJ7aMY7BclJNeZ439BeMN9D97yR7ZjFjujlGzrPbnvnp3OMY7Ce4Mf9zuV8r87q5YvyzmCmwOUZVZrpcoVNU2hyjoiukUBYzlTbHqNyUh5rPXHJzjEqskIpZzNSOY8Y2kbpZzPQQx8ikkupNjLqKYyYxkW6ymOkwjlFYJZ01Meo5jnmTh9JrEPN2JY5Fa+WyCyks2t04cKKSPwRDDOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAPSX3lcCogfwNzzAAAAAElFTkSuQmCC">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="La Tangerine"><meta name="theme-color" content="#9b121e"><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEkUlEQVR4nO3dsWoUURTG8VkNWImQgE0gtRbiA1ha2eQFUlspNhYWNhY+gWAVW2vBWl/CRjurNNEIYiUaYzGwDDFf3Ozee8537/5/9bqZOfvnzOzCrrP9zZ0BOMul7AOAL+KARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAWkj+wBy7O7NLvpP3r4+qXEkzmZr8qWmJWo43zq00nMcxYNQeg2ltzjCglB6CqWfONKzmOojkebjsGriX01X0nAc5llMNZpIk3E0lMVUc4k0FkejWUw1lEgzcXSQxVQTibTx8XlnZQyNnJH75mhiiKtwXiHWm6P7Mgbvc/SNw3lqZdmeqeNlxXZYtbldYuw2x9qWMfidu1ccbtOJZzUBozis5pLIZw4ucfhMxIHJNCziMJmFFYeZ5MfhMAVP6ZNJjiP9/M3lziczDspYROKU0uKgjMVlzSonDsq4qJSJJcRBGcuJn1v+uxXYio6DtbGK4OmFxkEZq4ucYVwclFFK2CS554AUFAdro6yYeUbEQRk1BEyVywqk6nGwNuqpPVs2B6S6cbA2aqs6YTYHpIpxsDZi1JszmwNSrThYG5EqTZvNAYk4IFWJg2tKvBozZ3NAKv8TDFXXxuXN7a1n789/zJ8fR1+f3vnvU127//LKrbuFjmsZ3189/PnhXdnnLPsjDmwOSMQBiTggFY6D9ym5ys6fzQGJOCARB6SScXDD4aDgq7Cm/zvkMAzf9x8s/uCN7ZubT96c/5jjw89Hz++tdlBeuKxAIg5IxAGpWBzcjfoo9VqwOSARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGpWBxlv9+NVZR6LdgckIgDEnFAIg5IJePgntRBwVeBzQGJOCB1+EXqS1e3rr/4tMozfHl8++TXz1LH067Cm4Pbjlz81CSCEAck4oBUPg5uO7IUnzybA1KVOFge8WrMnM0BqbEPwY6/HRw+uhH/d38ffEz5u7lqbQ6uLJEqTZvLCqSKcbA8YtSbM5sDUt04WB61VZ0wmwNS9ThYHvXUni2bA1JEHCyPGgKmGrQ56KOsmHlyWYEUFwfLo5SwSYZuDvpYXeQMoy8r9LGK4OlxzwEpIQ6Wx3Li55azOejjolImlnZZoY/FZc0q856DPhaROKXkG1L6OF/ufPLfrdCHkj6Z/DgGgykYcpiJRRyDxyx8mEzDJY7BZiLpfOZgFMfgNJcsVhPwimMwm04wt3Of7W/uZB/D2Xb3ZtmHEMcti5Hd5pjznFcNtmfqG8dgPLWCnM/R97Iy1eUlxjmLkfXmmPOf40U1cUZtbI65DlZIE1mMGotj1GgiDWUxajKOUUOJNJfFqOE4RuaJNJrFqPk45qwqabqJuX7iGKUn0kcWo97imAoLpacgpnqOY6p4KL0GMbUucZyyRCvrUMMpaxoHFtHGx+dIQRyQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAekvKC8mh7QZrOEAAAAASUVORK5CYII="><link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEkUlEQVR4nO3dsWoUURTG8VkNWImQgE0gtRbiA1ha2eQFUlspNhYWNhY+gWAVW2vBWl/CRjurNNEIYiUaYzGwDDFf3Ozee8537/5/9bqZOfvnzOzCrrP9zZ0BOMul7AOAL+KARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAWkj+wBy7O7NLvpP3r4+qXEkzmZr8qWmJWo43zq00nMcxYNQeg2ltzjCglB6CqWfONKzmOojkebjsGriX01X0nAc5llMNZpIk3E0lMVUc4k0FkejWUw1lEgzcXSQxVQTibTx8XlnZQyNnJH75mhiiKtwXiHWm6P7Mgbvc/SNw3lqZdmeqeNlxXZYtbldYuw2x9qWMfidu1ccbtOJZzUBozis5pLIZw4ucfhMxIHJNCziMJmFFYeZ5MfhMAVP6ZNJjiP9/M3lziczDspYROKU0uKgjMVlzSonDsq4qJSJJcRBGcuJn1v+uxXYio6DtbGK4OmFxkEZq4ucYVwclFFK2CS554AUFAdro6yYeUbEQRk1BEyVywqk6nGwNuqpPVs2B6S6cbA2aqs6YTYHpIpxsDZi1JszmwNSrThYG5EqTZvNAYk4IFWJg2tKvBozZ3NAKv8TDFXXxuXN7a1n789/zJ8fR1+f3vnvU127//LKrbuFjmsZ3189/PnhXdnnLPsjDmwOSMQBiTggFY6D9ym5ys6fzQGJOCARB6SScXDD4aDgq7Cm/zvkMAzf9x8s/uCN7ZubT96c/5jjw89Hz++tdlBeuKxAIg5IxAGpWBzcjfoo9VqwOSARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGpWBxlv9+NVZR6LdgckIgDEnFAIg5IJePgntRBwVeBzQGJOCB1+EXqS1e3rr/4tMozfHl8++TXz1LH067Cm4Pbjlz81CSCEAck4oBUPg5uO7IUnzybA1KVOFge8WrMnM0BqbEPwY6/HRw+uhH/d38ffEz5u7lqbQ6uLJEqTZvLCqSKcbA8YtSbM5sDUt04WB61VZ0wmwNS9ThYHvXUni2bA1JEHCyPGgKmGrQ56KOsmHlyWYEUFwfLo5SwSYZuDvpYXeQMoy8r9LGK4OlxzwEpIQ6Wx3Li55azOejjolImlnZZoY/FZc0q856DPhaROKXkG1L6OF/ufPLfrdCHkj6Z/DgGgykYcpiJRRyDxyx8mEzDJY7BZiLpfOZgFMfgNJcsVhPwimMwm04wt3Of7W/uZB/D2Xb3ZtmHEMcti5Hd5pjznFcNtmfqG8dgPLWCnM/R97Iy1eUlxjmLkfXmmPOf40U1cUZtbI65DlZIE1mMGotj1GgiDWUxajKOUUOJNJfFqOE4RuaJNJrFqPk45qwqabqJuX7iGKUn0kcWo97imAoLpacgpnqOY6p4KL0GMbUucZyyRCvrUMMpaxoHFtHGx+dIQRyQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAekvKC8mh7QZrOEAAAAASUVORK5CYII=">
 <title>La Tangerine Cashier</title>
 <style>
-:root{--bg:#f4f2f7;--sf:#fff;--tx:#241f30;--mu:#6e6880;--ac:#b8135a;--ac-t:#fff;--soft:#fbe3ee;--bd:#e0dbe8;--ok:#2f7d4f;--bad:#c62828;
+:root{--bg:#fffff7;--sf:#fffff7;--tx:#2b0d10;--mu:#7a5650;--ac:#9b121e;--ac-t:#fffff7;--soft:#fce9d7;--bd:#ebd0cc;--ok:#2f7d4f;--bad:#b3261e;--or:#e96d1f;color-scheme:light;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17141e;--sf:#221e2c;--tx:#f1eef7;--mu:#a29bb5;--ac:#ec5f9a;--ac-t:#1a0710;--soft:#3a2231;--bd:#383247;--ok:#6fd096;--bad:#ff8a80}}
-:root[data-theme="dark"]{--bg:#17141e;--sf:#221e2c;--tx:#f1eef7;--mu:#a29bb5;--ac:#ec5f9a;--ac-t:#1a0710;--soft:#3a2231;--bd:#383247;--ok:#6fd096;--bad:#ff8a80}
 *,*::before,*::after{box-sizing:inherit}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;height:100%;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -62,7 +60,33 @@ label{font-size:13px;color:var(--mu);display:block;margin-bottom:2px}
  .custom{grid-template-columns:1fr 100px auto}
 }
 @media (prefers-reduced-motion:reduce){.order{transition:none}}
-.hbtn{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.hbtn select{width:auto}.hbtn button{padding:8px 10px}.item:disabled{opacity:.45;cursor:not-allowed}input:disabled,select:disabled,.quick button:disabled{opacity:.5;cursor:not-allowed}.erow{grid-template-columns:1fr 100px 110px 80px 60px 44px}@media (max-width:800px){.erow{grid-template-columns:1fr 80px 70px 60px 44px}}.erow.pr{grid-template-columns:1fr 110px 80px;align-items:center}.item s{color:var(--mu);font-weight:400;font-size:13px}.erow.pm{grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--bd);padding-bottom:10px;margin-bottom:12px}.erow.pm input{padding:8px 6px;font-size:16px}#pitems{max-height:38vh;overflow-y:auto;margin-bottom:8px}#mx{z-index:40}#mc{z-index:50}#sy{flex-basis:100%;font-size:12px}#sy:empty{display:none}
+.hbtn{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.hbtn select{width:auto}.hbtn button{padding:8px 10px}.item:disabled{opacity:.45;cursor:not-allowed}input:disabled,select:disabled,.quick button:disabled{opacity:.5;cursor:not-allowed}.erow{grid-template-columns:1fr 100px 110px 80px 60px 44px}@media (max-width:800px){.erow{grid-template-columns:1fr 80px 70px 60px 44px}}.erow.pr{grid-template-columns:1fr 110px 80px;align-items:center}.item s{color:var(--mu);font-weight:400;font-size:13px}.erow.pm{grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--bd);padding-bottom:10px;margin-bottom:12px}.erow.pm input{padding:8px 6px;font-size:16px}#pitems{max-height:38vh;overflow-y:auto;margin-bottom:8px}#mx{z-index:40}#mc{z-index:50}
+#toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(12px + env(safe-area-inset-top,0px));z-index:60;background:var(--ac);color:var(--ac-t);padding:10px 16px;border-radius:10px;max-width:90%;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.bl{max-height:34vh;overflow-y:auto;border:1px solid var(--bd);border-radius:10px;padding:2px 8px;margin-top:6px}.bi{display:grid;grid-template-columns:minmax(0,1fr) 84px;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid var(--bd)}.bi:last-child{border-bottom:0}.bi[hidden]{display:none}.bi span{overflow-wrap:anywhere}
+.chk{display:flex;gap:8px;align-items:center;font-size:15px;color:var(--tx)}.chk input{width:auto;min-height:0;flex:none}
+.gscroll{flex:1;min-height:0;overflow-y:auto;padding-bottom:90px}.gscroll>.grid{flex:none;overflow:visible;padding-bottom:0}
+[hidden]{display:none!important}
+.item{border:1px solid var(--bd);background:var(--sf);border-radius:10px;cursor:pointer;overflow-wrap:anywhere;word-break:break-word;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+.item.off{opacity:.45;cursor:not-allowed}.item:focus-visible{outline:3px solid var(--ac);outline-offset:1px}.item span,.item b{overflow-wrap:anywhere}
+.cl b,.cl .muted{overflow-wrap:anywhere}
+.set{max-width:780px}.sethead{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.tabs{display:flex;gap:6px;margin:8px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--bd)}.tabs button{flex:1}.tabs .on{background:var(--ac);color:var(--ac-t);border-color:var(--ac);font-weight:700}
+.toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);gap:8px;margin-bottom:8px}.toolbar2{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}.toolbar2 .primary{flex:1 1 160px}
+.pr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:10px;border:1px solid var(--bd);border-radius:10px;margin-bottom:8px}
+.pr b,.pr .muted{overflow-wrap:anywhere}.pr .pa{grid-column:1/3;display:flex;gap:6px}.pr .pa button{flex:1 1 0;min-height:40px}
+.danger{color:var(--bad);border-color:var(--bad)}.badge{display:inline-block;padding:1px 8px;margin-left:6px;border-radius:99px;background:var(--soft);font-size:12px;color:var(--tx)}
+.setbar{position:sticky;bottom:0;background:var(--bg);display:flex;gap:8px;justify-content:flex-end;padding:10px 0 2px;margin-top:10px;border-top:1px solid var(--bd)}.setbar button{flex:1 1 0;max-width:240px}
+.err{color:var(--bad);margin-top:8px;font-weight:600}.err:empty{display:none}.ef{display:grid;gap:10px}.hint{color:var(--mu);font-size:12px}
+.diff{background:var(--soft);border-radius:10px;padding:8px 10px;margin:8px 0}.diff div{padding:2px 0}
+.chips .on{background:var(--or);border-color:var(--or);color:var(--tx);font-weight:700}
+.item{border-color:var(--bd)}.item:active,.item:hover{background:var(--soft);border-color:var(--or)}
+.order{border-top:4px solid var(--or)}header h1{color:var(--ac)}.order h2{color:var(--ac)}
+.pay .quick button{border-color:var(--or)}
+textarea{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:10px;min-height:44px;width:100%;resize:none;overflow:hidden;font:inherit;color:inherit;line-height:1.3}
+textarea:focus-visible{outline:3px solid var(--ac);outline-offset:1px}
+.erow.prow{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start}
+.erow.prow>*{flex:1 1 100px;min-width:0}.erow.prow>textarea{flex:3 1 220px}.erow.prow>button{flex:0 0 auto}.erow.prow .cat{display:block}
+.erow.pm{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}#sy{flex-basis:100%;font-size:12px}#sy:empty{display:none}
 html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wrap}header h1{flex:1 1 auto;min-width:0}
 .hbtn{flex:0 1 auto;max-width:100%}
 @media (max-width:800px){h1{font-size:18px}.hbtn{width:100%;justify-content:flex-start}.hbtn button,.hbtn select{min-height:38px;padding:6px 10px;font-size:15px}.chips{max-width:100%}.grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
@@ -95,10 +119,10 @@ html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wr
  <section class="menu">
   <header>
    <h1 id="shopname"></h1>
-   <div class="hbtn"><select id="staff" aria-label="Cashier"></select><button id="btnPre">Pre-orders</button><button id="btnRep">Sales</button><button id="btnExp">Export</button><button id="btnEdit">Settings</button></div><span id="sy" class="muted"></span>
+   <div class="hbtn"><select id="staff" aria-label="Cashier"></select><button id="btnPre">Pre-orders</button><button id="btnRep">Sales</button><button id="btnExp">Export</button><button id="btnRc">Receipts</button><button id="btnEdit">Settings</button></div><span id="sy" class="muted"></span>
   </header>
   <div class="chips" id="chips"></div>
-  <div class="grid" id="grid"></div>
+  <div class="gscroll"><div class="grid" id="grid"></div></div>
   <div class="custom">
    <input id="cName" placeholder="Custom item (e.g. Birthday cake)">
    <input id="cPrice" type="number" inputmode="decimal" min="0" placeholder="Price">
@@ -135,22 +159,38 @@ html,body{max-width:100%;overflow-x:hidden}.menu{min-width:0}header{flex-wrap:wr
 <button class="bar primary" id="bar"><span id="barN">0 items</span><span id="barT">View order</span></button>
 
 <div class="modal" id="modal">
- <div class="card">
-  <h3>Shop settings and menu</h3>
-  <div class="fgrid">
-   <div><label for="sShop">App name (top of screen)</label><input id="sShop"></div><div><label for="sRn">Name on receipts</label><input id="sRn"></div>
+ <div class="card set">
+  <div class="sethead"><h3>Settings</h3><span id="pend" class="muted"></span></div>
+  <div class="tabs"><button data-t="menu" class="on">Menu</button><button data-t="shop">Store</button><button data-t="sync">Sync and PIN</button></div>
+  <section id="t-menu">
+   <div class="toolbar"><input id="mSearch" type="search" placeholder="Search product" aria-label="Search product"><select id="mCat" aria-label="Filter by category"></select></div>
+   <div class="toolbar2"><button id="eAdd" class="primary">+ Add product</button><button id="eOff">Hidden products</button></div>
+   <div class="muted" id="mCount"></div>
+   <div id="erows"></div>
+  </section>
+  <section id="t-shop" hidden><div class="fgrid">
+   <div><label for="sShop">App name (top of screen)</label><input id="sShop"></div>
+   <div><label for="sRn">Name printed on receipts</label><input id="sRn"></div>
    <div><label for="sCur">Currency symbol</label><input id="sCur"></div>
-   <div><label for="sTax">Tax (%)</label><input id="sTax" type="number" min="0" step="0.1"></div>
-   <div><label for="sFoot">Receipt message</label><input id="sFoot"></div><div><label for="sStaff">Cashier names (comma separated)</label><input id="sStaff"></div><div><label for="sRef">Full refund if pre-order cancelled this many days before pickup</label><input id="sRef" type="number" min="0"></div><div><label for="sMin">Minimum pre-order deposit (% of total)</label><input id="sMin" type="number" min="0" max="100"></div><div style="grid-column:1/3"><label for="sUrl">Sync database address (Firebase)</label><input id="sUrl" placeholder="https://your-project-default-rtdb.firebaseio.com"></div><div><label for="sCode">Sync code (secret, 16+ characters)</label><input id="sCode" autocomplete="off"></div><div style="align-self:end"><button id="sGen" type="button">Generate code</button></div>
-  </div>
-  <div id="erows"></div>
-  <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
-   <button id="eAdd">Add menu item</button><button id="eOff">Inactive items</button><button id="eChg">Change admin PIN</button>
-   <button id="eDone" class="primary">Save and close</button>
-  </div>
+   <div><label for="sTax">Tax (%)</label><input id="sTax" type="number" min="0" max="100" step="0.1"></div>
+   <div><label for="sFoot">Receipt message</label><input id="sFoot"></div>
+   <div><label for="sStaff">Cashier names (separate with commas)</label><input id="sStaff"></div>
+   <div><label for="sBox">Product box size (cashier screen)</label><select id="sBox"><option value="s">Small</option><option value="m">Medium</option><option value="l">Large</option></select></div>
+   <div><label for="sRef">Pre-order full refund until (days before pickup)</label><input id="sRef" type="number" min="0"></div>
+   <div><label for="sMin">Minimum pre-order deposit (% of total)</label><input id="sMin" type="number" min="0" max="100"></div>
+  </div></section>
+  <section id="t-sync" hidden><div class="fgrid">
+   <div style="grid-column:1/3"><label for="sUrl">Sync database address (Firebase)</label><input id="sUrl" placeholder="https://your-project-default-rtdb.firebaseio.com"></div>
+   <div><label for="sCode">Sync code (secret, 16+ characters)</label><input id="sCode" autocomplete="off"></div>
+   <div style="align-self:end"><button id="sGen" type="button">Generate code</button></div>
+   <div style="grid-column:1/3"><button id="eChg" type="button">Change admin PIN</button></div>
+  </div></section>
+  <div id="sErr" class="err" role="alert"></div>
+  <div class="setbar"><button id="eCancel">Cancel</button><button id="eDone" class="primary">Save and close</button></div>
  </div>
 </div>
 
+<div id="toast" role="status" hidden></div>
 <div class="modal" id="mc"><div class="card" id="mcc" style="max-width:420px;margin-top:12vh"></div></div>
 <div class="modal" id="mx"><div class="card" id="mxc"></div></div>
 <div id="receipt"></div>
@@ -198,7 +238,7 @@ const DEF=[
  ["White Coconut Slice", 55000, "Slices"],
  ["Matcha Ube Slice", 58000, "Slices"]
 ].map((a,i)=>({id:"d"+i,name:a[0],price:a[1],cat:a[2]}));
-let S=Object.assign({shop:"La Tangerine Cashier",rname:"La Tangerine",cur:"Rp",tax:0,foot:"Thank you, see you again!",staff:"Cashier 1, Cashier 2",refund:3,minDep:30},load("cc_set",{}));
+let S=Object.assign({shop:"La Tangerine Cashier",rname:"La Tangerine",cur:"Rp",tax:0,foot:"Thank you, see you again!",staff:"Cashier 1, Cashier 2",refund:3,minDep:30,box:"m"},load("cc_set",{}));
 let M=load("cc_menu",DEF);
 let N=load("cc_no",1);
 let cart=[],cat="All",total=0;
@@ -206,13 +246,13 @@ let cart=[],cat="All",total=0;
 const fmt=n=>{const x=(S.cur||"").trim();const s=new Intl.NumberFormat(x==="Rp"?"id-ID":"en-US",{maximumFractionDigits:2}).format(n||0);return (x?x+" ":"")+s};
 const cats=()=>["All",...new Set(M.filter(on).map(i=>i.cat||"Other"))];
 
-function renderMenu(){
+function renderMenu(){{const g=$("#grid"),z=S.box||"m";g.style.gridTemplateColumns="repeat(auto-fill,minmax("+({s:110,m:140,l:190}[z]||140)+"px,1fr))";g.style.fontSize={s:"14px",m:"16px",l:"18px"}[z]||"16px"}
  $("#shopname").textContent=S.shop;document.title=S.shop;
  if(!cats().includes(cat))cat="All";
  $("#chips").innerHTML=cats().map(c=>`<button class="${c===cat?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
- $("#grid").innerHTML=M.filter(i=>on(i)&&(cat==="All"||(i.cat||"Other")===cat)).map(i=>`<button class="item" data-id="${i.id}"${tracked(i)&&+i.stock<=0?" disabled":""}><b>${esc(i.name)}</b>${promoOn(i)?`<span><s>${fmt(i.price)}</s> ${fmt(i.promo)}</span>`:`<span>${fmt(i.price)}</span>`}${tracked(i)?`<small class="muted">${+i.stock<=0?"Sold out":i.stock+" left"}</small>`:""}</button>`).join("")||'<div class="empty">No items yet. Tap Edit menu to add some.</div>';
+ $("#grid").innerHTML=M.filter(i=>on(i)&&(cat==="All"||(i.cat||"Other")===cat)).map(i=>`<div class="item${av(i)!=null&&av(i)<=0?" off":""}" role="button" tabindex="0" data-id="${i.id}"><b>${esc(i.name)}</b>${promoOn(i)?`<span><s>${fmt(i.price)}</s> ${fmt(i.promo)}</span>`:`<span>${fmt(i.price)}</span>`}${isB(i)||av(i)!=null?`<small class="muted">${isB(i)?"Bundle":""}${isB(i)&&av(i)!=null?" · ":""}${av(i)==null?"":av(i)<=0?"Sold out":av(i)+" left"}</small>`:""}</div>`).join("")||'<div class="empty">No items yet. Tap Edit menu to add some.</div>';
 }
-function add(it){const l=cart.find(x=>x.id===it.id);if(tracked(it)&&(l?l.qty:0)>=+it.stock)return say("Only "+it.stock+" left of "+it.name+".",true);if(l)l.qty++;else cart.push({id:it.id,name:it.name,price:eff(it),orig:+it.price,qty:1});renderCart()}
+function add(it){const l=cart.find(x=>x.id===it.id),lim=M.some(m=>m.id===it.id)?canAdd(it):null;if(lim)return toast("Not enough stock: only "+lim.stock+" left of "+lim.name+(lim.id!==it.id?" (inside "+it.name+")":"")+".");if(l)l.qty++;else cart.push({id:it.id,name:it.name,price:eff(it),orig:+it.price,qty:1,inc:incStr(it)});renderCart()}
 function renderCart(){
  $("#rno").textContent=pendNo?"#"+pendNo:syOn()?"":"#"+peek("cc_rno");
  $("#lines").innerHTML=cart.length?cart.map((l,i)=>`<div class="cl"><div><b>${esc(l.name)}</b><div class="muted">${l.orig>l.price?`<s>${fmt(l.orig)}</s> `:""}${fmt(l.price)} each</div></div><span class="q"><button data-m="${i}" aria-label="Remove one">−</button><span>${l.qty}</span><button data-p="${i}" aria-label="Add one">+</button></span><b>${fmt(l.price*l.qty)}</b></div>`).join(""):'<div class="empty">Tap an item to start the order.</div>';
@@ -240,7 +280,7 @@ function say(t,bad){const m=$("#msg");m.textContent=t;m.style.color=bad?"var(--b
 
 function receipt(t,paid,chg,method,extra="",lines=cart,no=peek("cc_rno")){
  const now=new Date();
- const rows=lines.map(l=>`<div>${esc(l.name)}</div><div class="r"><span>${l.qty} x ${fmt(l.price)}</span><span>${fmt(l.qty*l.price)}</span></div>`).join("");
+ const rows=lines.map(l=>`<div>${esc(l.name)}</div>${l.inc?`<div style="font-size:11px">incl. ${esc(l.inc)}</div>`:""}<div class="r"><span>${l.qty} x ${fmt(l.price)}</span><span>${fmt(l.qty*l.price)}</span></div>`).join("");
  $("#receipt").innerHTML=`<h4>${esc(S.rname||S.shop)}</h4><div class="c">${now.toLocaleString()}</div><div class="c">Receipt #${no}</div>${staff?`<div class="c">Cashier: ${esc(staff)}</div>`:""}<hr>${rows}<hr>
  <div class="r"><span>Subtotal</span><span>${fmt(t.sub)}</span></div>
  ${t.d>0?`<div class="r"><span>Discount</span><span>− ${fmt(t.d)}</span></div>`:""}
@@ -248,7 +288,7 @@ function receipt(t,paid,chg,method,extra="",lines=cart,no=peek("cc_rno")){
  <div class="r"><b>TOTAL</b><b>${fmt(total)}</b></div><hr>
  <div class="r"><span>Paid by ${esc(method)}</span><span>${fmt(paid)}</span></div>
  ${method==="Cash"?`<div class="r"><span>Change</span><span>${fmt(chg)}</span></div>`:""}
- ${extra}<hr><div class="c">${esc(S.foot)}</div>`;
+ ${extra}<hr><div class="c">${esc(S.foot)}</div>`;saveRc(no);
 }
 async function pay(){
  if(!cart.length)return say("Add at least one item first.",true);
@@ -258,15 +298,15 @@ async function pay(){
  let no;try{$("#btnPay").disabled=true;no=pendNo||(pendNo=await reserve("rno"))}finally{$("#btnPay").disabled=false}
  ask("Confirm payment",sm,()=>{const t=calc();
  receipt(t,method==="Cash"?c:total,method==="Cash"?c-total:0,method,"",cart,no);
- window.print();
- record("sale",total,method,Object.assign({ref:no,voucher:$("#vcode").value.trim()},t));pendNo=null;useStock(cart);bump("cc_rno");newOrder();say("Order complete. Ready for the next customer.");})
+ doPrint();
+ record("sale",total,method,Object.assign({ref:no,voucher:$("#vcode").value.trim()},t));pendNo=null;useStock(cart);bump("cc_rno");newOrder();say("Order complete. Ready for the next customer.");toast("Sale saved. If the receipt did not print, tap Receipts to print it again.");})
 }
 function newOrder(){cart=[];$("#cash").value="";$("#dVal").value=0;$("#vcode").value="";renderCart();$("#order").classList.remove("open")}
 
 $("#chips").onclick=e=>{const b=e.target.closest("button");if(b){cat=b.dataset.c;renderMenu()}};
-$("#grid").onclick=e=>{const b=e.target.closest(".item");if(b){const it=M.find(i=>i.id===b.dataset.id);if(it)add(it);$("#msg").textContent=""}};
+$("#grid").onclick=e=>{const b=e.target.closest(".item");if(b&&!b.classList.contains("off")){const it=M.find(i=>i.id===b.dataset.id);$("#msg").textContent="";if(it)add(it)}};
 $("#lines").onclick=e=>{const b=e.target.closest("button");if(!b)return;
- if(b.dataset.p!=null){const l=cart[+b.dataset.p],m=M.find(i=>i.id===l.id);if(!(m&&tracked(m)&&l.qty>=+m.stock))l.qty++}
+ if(b.dataset.p!=null){const l=cart[+b.dataset.p],m=M.find(i=>i.id===l.id),lim=m?canAdd(m):null;if(lim)toast("Not enough stock: only "+lim.stock+" left of "+lim.name+".");else l.qty++}
  if(b.dataset.m!=null){const l=cart[+b.dataset.m];if(--l.qty<=0)cart.splice(+b.dataset.m,1)}
  renderCart()};
 $("#quick").onclick=e=>{const b=e.target.closest("button");if(b){$("#cash").value=b.dataset.q;change()}};
@@ -280,16 +320,15 @@ $("#cAdd").onclick=()=>{const n=$("#cName").value.trim(),p=+$("#cPrice").value;
  if(!n||!(p>=0)||$("#cPrice").value==="")return say("Enter a name and a price for the custom item.",true);
  add({id:"c"+Date.now(),name:n,price:p});$("#cName").value="";$("#cPrice").value="";$("#msg").textContent=""};
 
-function editor(){
- $("#sShop").value=S.shop;$("#sRn").value=S.rname||S.shop;$("#sCur").value=S.cur;$("#sTax").value=S.tax;$("#sFoot").value=S.foot;$("#sStaff").value=S.staff;$("#sRef").value=nz(S.refund,3);$("#sMin").value=nz(S.minDep,30);$("#sUrl").value=SY.url;$("#sCode").value=SY.code;
- $("#erows").innerHTML=M.map((i,k)=>!on(i)?"":`<div class="erow"><input data-k="${k}" data-f="name" value="${esc(i.name)}" aria-label="Name"><input data-k="${k}" data-f="price" type="number" min="0" value="${i.price}" aria-label="Price"><input class="cat" data-k="${k}" data-f="cat" value="${esc(i.cat||"")}" aria-label="Category"><input data-k="${k}" data-f="stock" type="number" min="0" placeholder="Stock" value="${tracked(i)?i.stock:""}" aria-label="Stock (empty = not tracked)"><button data-off="${k}" title="Make inactive">Hide</button><button data-del="${k}" aria-label="Delete item">×</button></div><div class="erow pm"><div><label>Promo price</label><input data-k="${k}" data-f="promo" type="number" min="0" value="${nz(i.promo,"")}"></div><div><label>Promo from</label><input data-k="${k}" data-f="pFrom" type="date" value="${i.pFrom||""}"></div><div><label>Promo until</label><input data-k="${k}" data-f="pTo" type="date" value="${i.pTo||""}"></div></div>`).join("");
-}
-$("#btnEdit").onclick=()=>adminGate(()=>{editor();$("#modal").classList.add("open")});
-$("#erows").oninput=e=>{const k=e.target.dataset.k,f=e.target.dataset.f;if(k==null)return;M[k][f]=f==="price"?(+e.target.value||0):f==="promo"?(e.target.value===""?"":Math.max(0,+e.target.value)):f==="stock"?(e.target.value===""?"":Math.max(0,+e.target.value)):e.target.value};
-$("#erows").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.del!=null){M.splice(+b.dataset.del,1);editor()}else if(b.dataset.off!=null){M[+b.dataset.off].active=false;editor()}};
-$("#eAdd").onclick=()=>{M.push({id:"m"+Date.now(),name:"New item",price:0,cat:cat==="All"?"Pastries":cat});editor()};
+$("#btnEdit").onclick=()=>adminGate(()=>{snapM=JSON.stringify(M);pendN=0;fCat="All";fQ="";$("#mSearch").value="";showTab("menu");editor();$("#modal").classList.add("open")});
 $("#eDone").onclick=()=>{
- S.shop=$("#sShop").value.trim()||"La Tangerine Cashier";S.rname=$("#sRn").value.trim()||S.shop;S.cur=$("#sCur").value;S.tax=Math.max(0,+$("#sTax").value||0);S.foot=$("#sFoot").value;S.staff=$("#sStaff").value;S.refund=$("#sRef").value===""?3:Math.max(0,+$("#sRef").value);S.minDep=$("#sMin").value===""?30:Math.min(100,Math.max(0,+$("#sMin").value));
+ {const er=(m,t)=>{showTab(t);$("#sErr").textContent=m;return true},tax=$("#sTax").value,url=$("#sUrl").value.trim(),code=$("#sCode").value.trim();
+  if(tax!==""&&(!isFinite(+tax)||+tax<0||+tax>100))return er("Tax must be a number from 0 to 100.","shop");
+  if(!$("#sStaff").value.split(",").some(x=>x.trim()))return er("Enter at least one cashier name.","shop");
+  if((url||code)&&!/^https:\/\/.+/.test(url))return er("The sync address must start with https://","sync");
+  if(url&&code.length<16)return er("The sync code needs at least 16 characters. Tap Generate code.","sync")}
+ pendN=0;
+ S.shop=$("#sShop").value.trim()||"La Tangerine Cashier";S.rname=$("#sRn").value.trim()||S.shop;S.cur=$("#sCur").value;S.tax=Math.max(0,+$("#sTax").value||0);S.foot=$("#sFoot").value;S.staff=$("#sStaff").value;S.box=$("#sBox").value;S.refund=$("#sRef").value===""?3:Math.max(0,+$("#sRef").value);S.minDep=$("#sMin").value===""?30:Math.min(100,Math.max(0,+$("#sMin").value));
  save("cc_set",S);save("cc_menu",M);{const nu=$("#sUrl").value.trim(),nc=$("#sCode").value.trim(),ch=nu!==SY.url||nc!==SY.code;SY={url:nu,code:nc};save("cc_sync",SY);if(ch)syncNow(true);else{pushSettings();pushMenu()}}cart=cart.filter(l=>l.id[0]==="c"||M.some(i=>i.id===l.id));
  $("#modal").classList.remove("open");renderMenu();renderCart();hdr()};
 
@@ -299,8 +338,8 @@ let staff=load("cc_staff",""),sales=load("cc_sales",[]),pre=load("cc_pre",[]),pr
 const names=()=>String(S.staff||"").split(",").map(s=>s.trim()).filter(Boolean);
 function hdr(){const n=names();if(!n.includes(staff))staff=n[0]||"";$("#staff").innerHTML=n.map(x=>`<option${x===staff?" selected":""}>${esc(x)}</option>`).join("");$("#btnPre").textContent="Pre-orders ("+pre.filter(p=>!p.done).length+")"}
 $("#staff").onchange=e=>{staff=e.target.value;save("cc_staff",staff)};
-function record(type,amt,method,x){const s=Object.assign({no:N,ref:peek("cc_rno"),ts:Date.now(),staff,type,method,amt,items:cart.map(l=>({n:l.name,q:l.qty,p:l.price}))},x);skey(s);sales.push(s);save("cc_sales",sales);send("PUT","sales/"+s.k,s)}
-function useStock(lines,back){lines.forEach(l=>{const m=M.find(i=>i.id===l.id);if(m&&tracked(m)){const q=back?l.qty:-l.qty;m.stock=Math.max(0,+m.stock+q);send("PATCH","menu/"+m.id,{stock:{".sv":{increment:q}}})}});save("cc_menu",M);renderMenu()}
+function record(type,amt,method,x){const s=Object.assign({no:N,ref:peek("cc_rno"),ts:Date.now(),staff,type,method,amt,items:cart.map(l=>({n:l.name,q:l.qty,p:l.price,inc:l.inc||""}))},x);skey(s);sales.push(s);save("cc_sales",sales);send("PUT","sales/"+s.k,s)}
+function useStock(lines,back){lines.forEach(l=>{const it=M.find(i=>i.id===l.id);if(!it)return;expand(it,l.qty).forEach(p=>{const m=p[0];if(tracked(m)){const q=back?p[1]:-p[1];m.stock=Math.max(0,+m.stock+q);send("PATCH","menu/"+m.id,{stock:{".sv":{increment:q}}})}})});save("cc_menu",M);renderMenu()}
 function openM(h){$("#mxc").innerHTML=h;$("#mx").classList.add("open")}
 const closeM=()=>$("#mx").classList.remove("open");
 const day=ts=>{const d=new Date(ts);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
@@ -320,7 +359,7 @@ function report(d){d=d||day(Date.now());
  openM(`<h3>Sales report</h3><label for="rd">Date</label><input id="rd" type="date" value="${d}"><div class="two" style="margin-top:10px"><div><div class="muted">Store sales</div><div class="total" style="font-size:24px">${fmt(sum(st))}</div></div><div><div class="muted">Pre-orders (net of refunds)</div><div class="total" style="font-size:24px">${fmt(sum(po))}</div></div></div><div class="muted">Total money received: <b>${fmt(sum(L))}</b></div><h4>Store: by payment method</h4>${R(by(st,"method"),fmt)}<h4>Store: items sold</h4>${R(cnt(st,()=>true),x=>x)}<h4>Pre-orders: by payment method</h4>${R(by(po,"method"),fmt)}<h4>Pre-orders: items booked</h4>${R(cnt(po,s=>s.type==="deposit"),x=>x)}<h4>By cashier</h4>${R(by(L,"staff"),fmt)}<h4>Payments</h4>${L.slice().reverse().map(s=>`<div class="row muted"><span>${new Date(s.ts).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})} ${esc(s.ref||"#"+String(s.no).padStart(4,"0"))} ${s.full?"Full payment":lab[s.type]}, ${esc(s.staff||"-")}, ${esc(s.method)}${s.voucher?", voucher "+esc(s.voucher):""}</span><b>${fmt(s.amt)}</b></div>`).join("")||'<div class="muted">None</div>'}<button data-a="close" style="margin-top:14px">Close</button>`)}
 const preX=(p,l)=>`<hr><div>PRE-ORDER: ${esc(p.name)}</div><div>Pickup: ${esc(p.date)}</div>${p.note?`<div>${esc(p.note)}</div>`:""}${l}`;
 const daysTo=d=>Math.round((new Date(d+"T00:00:00")-new Date(day(Date.now())+"T00:00:00"))/864e5);
-function preLines(){const L=[];document.querySelectorAll("[data-pq]").forEach(x=>{const q=+x.value,i=M.find(m=>m.id===x.dataset.pq);if(q>0&&i)L.push({id:i.id,name:i.name,price:eff(i),qty:q})});
+function preLines(){const L=[];document.querySelectorAll("[data-pq]").forEach(x=>{const q=+x.value,i=M.find(m=>m.id===x.dataset.pq);if(q>0&&i)L.push({id:i.id,name:i.name,price:eff(i),qty:q,inc:incStr(i)})});
  const n=$("#xn").value.trim(),p=+$("#xp").value,q=+$("#xq").value;if(n&&$("#xp").value!==""&&p>=0&&q>0)L.push({id:"c"+Date.now(),name:n,price:p,qty:q});return L}
 function preCalc(){const hv=!!$("#pv").value.trim();$("#pdv").disabled=!hv;if(!hv)$("#pdv").value=0;const L=preLines(),sub=L.reduce((s,l)=>s+l.price*l.qty,0),d=sub*Math.min(Math.max(+$("#pdv").value||0,0),100)/100,tax=(sub-d)*(+S.tax||0)/100,tt=Math.round((sub-d+tax)*100)/100;
  $("#ptot").textContent=fmt(tt);const full=$("#pk").value==="full";$("#pab").style.display=full?"none":"block";$("#pdep").textContent=full?"Paid in full today.":"Minimum deposit ("+(nz(S.minDep,30))+"%): "+fmt(Math.ceil(tt*(nz(S.minDep,30))/100));return{L,t:{sub,d,tax},tt}}
@@ -337,30 +376,27 @@ async function savePre(){const {L,t,tt}=preCalc(),v=id=>$("#"+id).value.trim();
  const no0=pendPO||(pendPO="PO-"+await reserve("pno"));
  ask("Confirm pre-order payment",`${itemsH(L)}<div class="row"><span>Order total</span><b>${fmt(tt)}</b></div><div class="row"><span>Paid now (${full?"full":"deposit"})</span><b>${fmt(dep)}</b></div><div class="row"><span>Balance due</span><b>${fmt(tt-dep)}</b></div><div class="row"><span>Paid by</span><b>${esc(v("pm"))}</b></div>`,()=>{const no=no0,p={id:"p"+Date.now(),no,name:v("pn"),phone:v("pp"),date:v("pd"),note:v("pt"),total:tt,dep,sub:t.sub,d:t.d,tax:t.tax,lines:L,dm:v("pm"),voucher:v("pv"),done:false};
  pre.push(p);bump("cc_pno2");save("cc_pre",pre);pendPO=null;send("PUT","pre/"+pkey(p),p);
- record("deposit",dep,p.dm,{ref:no,full:dep>=tt,voucher:v("pv"),items:L.map(l=>({n:l.name,q:l.qty,p:l.price}))});
- total=tt;receipt(t,dep,0,p.dm,preX(p,`${tt-dep>0?`<div class="r"><b>Balance due</b><b>${fmt(tt-dep)}</b></div>`:`<div class="c"><b>PAID IN FULL</b></div>`}`),L,no);window.print();
+ record("deposit",dep,p.dm,{ref:no,full:dep>=tt,voucher:v("pv"),items:L.map(l=>({n:l.name,q:l.qty,p:l.price,inc:l.inc||""}))});
+ total=tt;receipt(t,dep,0,p.dm,preX(p,`${tt-dep>0?`<div class="r"><b>Balance due</b><b>${fmt(tt-dep)}</b></div>`:`<div class="c"><b>PAID IN FULL</b></div>`}`),L,no);doPrint();
  hdr();renderCart();preHub("list")})}
 function collectForm(id){const p=pre.find(x=>x.id===id);
  openM(`<h3>Collect balance: ${esc(p.name)}</h3><div class="total">${fmt(p.total-p.dep)}</div>${p.total-p.dep>0?`<label for="cm">Paid by</label><select id="cm">${PM}</select>`:'<div class="muted">Already paid in full. Mark as handed over.</div>'}<div class="two" style="margin-top:12px"><button data-a="plist">Back</button><button class="primary" data-a="confirm" data-id="${id}">Confirm and print</button></div>`)}
 function doCollect(id){const p=pre.find(x=>x.id===id),m=$("#cm")?$("#cm").value:"",bal=p.total-p.dep;
  if(bal<=0){p.done=true;save("cc_pre",pre);send("PATCH","pre/"+pkey(p),{done:true});hdr();return preHub("list")}
  ask("Confirm balance payment",`${itemsH(p.lines)}<div class="row"><span>Balance received</span><b>${fmt(bal)}</b></div><div class="row"><span>Paid by</span><b>${esc(m)}</b></div>`,()=>{p.done=true;save("cc_pre",pre);send("PATCH","pre/"+pkey(p),{done:true});record("balance",bal,m,{ref:p.no,items:[]});total=p.total;
- receipt({sub:p.sub,d:p.d,tax:p.tax},bal,0,m,preX(p,`<div class="r"><span>Deposit paid earlier</span><span>${fmt(p.dep)}</span></div><div class="r"><b>Paid now</b><b>${fmt(bal)}</b></div>`),p.lines,p.no);window.print();
+ receipt({sub:p.sub,d:p.d,tax:p.tax},bal,0,m,preX(p,`<div class="r"><span>Deposit paid earlier</span><span>${fmt(p.dep)}</span></div><div class="r"><b>Paid now</b><b>${fmt(bal)}</b></div>`),p.lines,p.no);doPrint();
  hdr();renderCart();preHub("list")})}
 function cancelForm(id){const p=pre.find(x=>x.id===id),n=daysTo(p.date),k=nz(S.refund,3),ok=n>=k;
  openM(`<h3>Cancel ${esc(p.no||"")} ${esc(p.name)}?</h3><div class="muted">Pickup ${esc(p.date)} (${n>=0?n+" days away":"date has passed"})</div><div style="margin:12px 0"><b style="color:var(${ok?"--ok":"--bad"})">${ok?"Full refund: "+fmt(p.dep):"No refund. The "+fmt(p.dep)+" already paid is kept."}</b><div class="muted">Full refund applies when cancelled ${k} or more days before pickup.</div></div><div class="two"><button data-a="plist">Keep order</button><button class="primary" data-a="cancelok" data-id="${id}">Confirm cancellation</button></div>`)}
 function cancelOk(id){const p=pre.find(x=>x.id===id),ok=daysTo(p.date)>=(nz(S.refund,3));
  p.done=true;p.cancel=ok?"refunded":"forfeited";save("cc_pre",pre);send("PATCH","pre/"+pkey(p),{done:true,cancel:p.cancel});if(ok)record("refund",-p.dep,p.dm,{ref:p.no,items:[]});hdr();
  openM(`<h3>Order cancelled</h3><div class="total">${ok?"Refund "+fmt(p.dep):"No refund"}</div><div class="muted">${ok?"Give the deposit back to the customer. It is recorded as a refund in the report.":"The deposit stays with the shop."}</div><button data-a="plist" style="margin-top:12px">Back to pre-orders</button>`)}
-function offList(){const rows=M.map((i,k)=>on(i)?"":`<div class="line"><div><b>${esc(i.name)}</b><div class="muted">${fmt(i.price)}, ${esc(i.cat||"Other")}</div></div><div class="two"><button data-a="act" data-k="${k}">Activate</button><button data-a="delx" data-k="${k}" aria-label="Delete ${esc(i.name)}">Delete</button></div></div>`).join("");
- openM(`<h3>Inactive items</h3><div class="muted">Hidden from the cashier screen. Activate an item to bring it back with its price and stock.</div>${rows||'<div class="empty">No inactive items.</div>'}<button data-a="close" style="margin-top:14px">Close</button>`)}
 $("#mxc").onclick=e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=b.dataset.id;
  if(a==="close")closeM();else if(a==="savepre")savePre();else if(a==="collect")collectForm(id);else if(a==="confirm")doCollect(id);else if(a==="cancelpre")cancelForm(id);else if(a==="cancelok")cancelOk(id);else if(a==="plist")preHub("list");else if(a==="pnew")preHub("new");
- else if(a==="act"){M[+b.dataset.k].active=true;save("cc_menu",M);renderMenu();editor();offList()}
- else if(a==="delx"){M.splice(+b.dataset.k,1);save("cc_menu",M);editor();offList()}};
+};
 $("#mxc").onchange=e=>{if(e.target.id==="rd"&&e.target.value)report(e.target.value)};
 $("#mxc").oninput=()=>{if($("#ptot"))preCalc()};
-$("#mx").onclick=e=>{if(e.target.id==="mx")closeM()};
+
 $("#btnRep").onclick=async()=>{await pullSales();report()};$("#btnPre").onclick=()=>preHub("list");$("#eOff").onclick=offList;
 const iso=d=>day(d.getTime());
 function expRange(k){const a=new Date();a.setHours(0,0,0,0);const b=new Date(a);if(k==="all")return["",""];if(k==="7")a.setDate(a.getDate()-6);else if(k==="month")a.setDate(1);return[iso(a),iso(b)]}
@@ -368,7 +404,7 @@ function xRows(f,t){
  const inr=ts=>{const d=day(ts);return(!f||d>=f)&&(!t||d<=t)},cr=p=>+String(p.id).slice(1);
  const L=sales.filter(s=>inr(s.ts)).sort((a,b)=>a.ts-b.ts),lab={sale:"Store sale",deposit:"Pre-order deposit",balance:"Pre-order balance",refund:"Pre-order refund"};
  const ref=s=>s.ref||String(s.no).padStart(4,"0"),tm=s=>new Date(s.ts).toTimeString().slice(0,5);
- const items=type=>L.filter(s=>s.type===type).flatMap(s=>s.items.map(i=>({Date:day(s.ts),Receipt:ref(s),Item:i.n,Qty:i.q,"Unit price":i.p,"Line total":i.q*i.p})));
+ const items=type=>L.filter(s=>s.type===type).flatMap(s=>s.items.map(i=>({Date:day(s.ts),Receipt:ref(s),Item:i.n,Qty:i.q,"Unit price":i.p,"Line total":i.q*i.p,Contents:i.inc||""})));
  const days={};L.forEach(s=>{const k=day(s.ts),o=days[k]||(days[k]={Date:k,"Store sales":0,"Pre-order payments (net)":0,"Total received":0,Payments:0});if(s.type==="sale")o["Store sales"]+=s.amt;else o["Pre-order payments (net)"]+=s.amt;o["Total received"]+=s.amt;o.Payments++});
  return{
   sum:Object.values(days),
@@ -441,7 +477,7 @@ let SY=load("cc_sync",{url:"",code:""}),out=load("cc_out",[]),syBusy=false,pendN
 const syOn=()=>!!(SY.url&&SY.code&&SY.code.length>=16);
 const syBase=()=>SY.url.replace(/\/+$/,"")+"/shops/"+encodeURIComponent(SY.code);
 const syStat=(t,bad)=>{const e=$("#sy");if(e){e.textContent=t;e.style.color=bad?"var(--bad)":""}};
-async function api(m,p,b,q){const r=await fetch(syBase()+"/"+p+".json"+(q||""),{method:m,body:b===undefined?undefined:JSON.stringify(b)});if(!r.ok){const e=new Error("HTTP "+r.status);e.status=r.status;throw e}return r.json()}
+async function api(m,p,b,q,ms){const ac=new AbortController(),tm=setTimeout(()=>ac.abort(),ms||10000);let r;try{r=await fetch(syBase()+"/"+p+".json"+(q||""),{method:m,body:b===undefined?undefined:JSON.stringify(b),signal:ac.signal})}finally{clearTimeout(tm)}if(!r.ok){const e=new Error("HTTP "+r.status);e.status=r.status;throw e}return r.json()}
 async function send(m,p,b){if(!syOn())return;try{await api(m,p,b)}catch(e){if(!e.status||e.status>=500){out.push({m,p,b});save("cc_out",out)}else syStat("Sync error "+e.status+": check the database rules",true)}}
 async function flush(){if(!syOn()||!out.length)return;const q=out.slice();out=[];save("cc_out",out);for(const o of q)await send(o.m,o.p,o.b)}
 function skey(s){return s.k||(s.k=s.ts+"_"+s.type+"_"+String(s.ref||s.no).replace(/[.$#\[\]\/]/g,"-"))}
@@ -449,8 +485,8 @@ const pkey=p=>p.no||p.id;
 function pushSettings(){const o={};Object.keys(S).forEach(k=>o[k]=S[k]);o.adm=adm||null;send("PUT","settings",o)}
 function pushMenu(){const o={};M.forEach((i,k)=>{const x={};Object.keys(i).forEach(f=>x[f]=i[f]);x._o=k;o[i.id]=x});send("PUT","menu",M.length?o:null)}
 async function reserve(kind){const d=ddmmyy(),loc=()=>peek(kind==="rno"?"cc_rno":"cc_pno2");if(!syOn())return loc();
- for(let i=0;i<6;i++){try{const r=await api("GET",kind,undefined,'?orderBy="$key"&startAt="'+d+'0000"&endAt="'+d+'9999"&limitToLast=1'),last=r&&Object.keys(r)[0],n=d+String((last?+last.slice(6):0)+1).padStart(4,"0");
-  await api("PUT",kind+"/"+n,{t:Date.now()});return n}catch(e){if(e.status===401||e.status===403)continue;break}}
+ for(let i=0;i<6;i++){try{const r=await api("GET",kind,undefined,'?orderBy="$key"&startAt="'+d+'0000"&endAt="'+d+'9999"&limitToLast=1',3000),last=r&&Object.keys(r)[0],n=d+String((last?+last.slice(6):0)+1).padStart(4,"0");
+  await api("PUT",kind+"/"+n,{t:Date.now()},undefined,3000);return n}catch(e){if(e.status===401||e.status===403)continue;break}}
  return loc()}
 async function pull(first){const g=p=>api("GET",p),[rs,rm,rp]=await Promise.all([g("settings"),g("menu"),g("pre")]);
  if(!rs&&!rm){if(first){pushSettings();pushMenu();pre.forEach(p=>send("PUT","pre/"+pkey(p),p));await pullSales(true)}return}
@@ -469,6 +505,91 @@ async function syncNow(first){if(!syOn()){syStat("");return}if(syBusy)return;syB
  catch(e){syStat(e.status?"Sync error "+e.status+": check the database address and rules":"Offline: saving on this device",true)}finally{syBusy=false}}
 setInterval(()=>syncNow(false),15000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)syncNow(false)});
 $("#sGen").onclick=()=>{const a=new Uint8Array(24),c="abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";(window.crypto||{getRandomValues:x=>x.forEach((_,i)=>x[i]=Math.random()*256)}).getRandomValues(a);$("#sCode").value=Array.from(a).map(x=>c[x%c.length]).join("")};
+/* ---- Settings: tabs, product list with category filter, edit form, confirmations ---- */
+let snapM="[]",pendN=0,fCat="All",fQ="";
+const curCats=()=>Array.from(new Set(M.filter(i=>on(i)).map(i=>i.cat||"Other")));
+const pendSet=()=>{$("#pend").textContent=pendN?pendN+" unsaved change"+(pendN>1?"s":""):""};
+function showTab(t){["menu","shop","sync"].forEach(x=>{$("#t-"+x).hidden=x!==t});document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));$("#sErr").textContent=""}
+function promoInfo(i){if(i.promo==null||i.promo==="")return "";return promoOn(i)?"Promo running":(i.pFrom&&day(Date.now())<i.pFrom?"Promo starts "+i.pFrom:"Promo ended")}
+function editor(){
+ $("#sShop").value=S.shop;$("#sRn").value=S.rname||S.shop;$("#sCur").value=S.cur;$("#sTax").value=S.tax;$("#sFoot").value=S.foot;$("#sStaff").value=S.staff;$("#sRef").value=nz(S.refund,3);$("#sMin").value=nz(S.minDep,30);$("#sBox").value=S.box||"m";$("#sUrl").value=SY.url;$("#sCode").value=SY.code;
+ renderList();pendSet()}
+function renderList(){const cs=curCats();if(fCat!=="All"&&cs.indexOf(fCat)<0)fCat="All";
+ $("#mCat").innerHTML='<option value="All">All categories ('+M.filter(i=>on(i)).length+')</option>'+cs.map(c=>`<option value="${esc(c)}"${c===fCat?" selected":""}>${esc(c)} (${M.filter(i=>on(i)&&(i.cat||"Other")===c).length})</option>`).join("");
+ const q=fQ.trim().toLowerCase(),L=M.filter(i=>on(i)&&(fCat==="All"||(i.cat||"Other")===fCat)&&(!q||String(i.name).toLowerCase().indexOf(q)>=0));
+ $("#mCount").textContent=L.length+" product"+(L.length===1?"":"s")+" shown";
+ $("#erows").innerHTML=L.map(i=>{const pi=promoInfo(i);return `<div class="pr"><div><b>${esc(i.name)}</b><div class="muted">${esc(i.cat||"Other")}${pi?`<span class="badge">${pi}</span>`:""}</div>${isB(i)?`<div class="muted">Contains: ${esc(incStr(i))}</div>`:""}</div><div style="text-align:right">${promoOn(i)?`<s class="muted">${fmt(i.price)}</s> <b>${fmt(i.promo)}</b>`:`<b>${fmt(i.price)}</b>`}<div class="muted">${isB(i)?(av(i)==null?"Bundle":"Bundle: "+av(i)+" possible"):tracked(i)?"Stock: "+i.stock:"Stock not tracked"}</div></div><div class="pa"><button data-e="${i.id}">Edit</button><button data-h="${i.id}">Hide</button><button class="danger" data-d="${i.id}">Delete</button></div></div>`}).join("")||'<div class="empty">No products found.</div>'}
+function cfm(title,body,yesLbl,yes){yesFn=yes;$("#mcc").innerHTML=`<h3>${title}</h3>${body}<div class="two" style="margin-top:14px"><button id="mcNo">No, go back</button><button class="primary" id="mcYes">${yesLbl}</button></div>`;$("#mc").classList.add("open")}
+function editForm(id){const it=id?M.find(i=>i.id===id):{name:"",cat:fCat==="All"?"":fCat,price:"",stock:"",promo:"",pFrom:"",pTo:""},cs=curCats();
+ openM(`<h3>${id?"Edit product":"Add product"}</h3><div class="ef"><div><label for="fn">Product name *</label><input id="fn" maxlength="60" value="${esc(it.name)}"></div><div><label for="fc">Category *</label><select id="fc">${cs.length&&!it.cat?'<option value="">Choose a category</option>':""}${cs.map(c=>`<option${c===(it.cat||"")?" selected":""}>${esc(c)}</option>`).join("")}<option value="__new">+ New category...</option></select><input id="fcn" placeholder="New category name" maxlength="30" hidden style="margin-top:6px"></div><div><label for="fp">Price * (${esc(S.cur)})</label><input id="fp" type="number" inputmode="decimal" min="0" value="${esc(it.price)}"></div>${bundleBlock(it)}<div id="sw"${isB(it)?" hidden":""}><label for="fs">Stock</label><input id="fs" type="number" inputmode="numeric" min="0" value="${tracked(it)?it.stock:""}"><div class="hint">Leave empty if you do not count stock for this product.</div></div><div class="fgrid"><div><label for="fq">Promo price</label><input id="fq" type="number" inputmode="decimal" min="0" value="${nz(it.promo,"")}"></div><div class="hint" style="align-self:end">Leave empty for no promo. The normal price is shown crossed out.</div><div><label for="ff">Promo from</label><input id="ff" type="date" value="${it.pFrom||""}"></div><div><label for="ft">Promo until</label><input id="ft" type="date" value="${it.pTo||""}"></div></div></div><div id="fe" class="err" role="alert"></div><div class="two" style="margin-top:12px"><button data-a="close">Cancel</button><button class="primary" data-a="fsave" data-id="${id||""}">Review change</button></div>`);
+ if(!cs.length){$("#fc").value="__new";$("#fcn").hidden=false}bSum()}
+function review(id){id=id||null;const v=x=>$("#"+x).value.trim(),isb=$("#fb").checked,f={name:v("fn"),cat:v("fc")==="__new"?v("fcn"):v("fc"),price:v("fp"),stock:v("fs"),promo:v("fq"),pFrom:v("ff"),pTo:v("ft")},er=m=>{$("#fe").textContent=m},price=+f.price;
+ if(!f.name)return er("Enter the product name.");
+ if(!f.cat)return er("Choose a category or type a new one.");
+ if(f.price===""||!isFinite(price)||price<=0)return er("Enter a price above 0.");
+ if(!isb&&f.stock!==""&&!/^\d+$/.test(f.stock))return er("Stock must be a whole number (0 or more), or empty.");
+ let bundle=null;
+ if(isb){const q=bundleRead(),bad=Object.keys(q).filter(k=>q[k]!==""&&!/^[1-9]\d{0,1}$/.test(q[k]));bundle={};
+  if(bad.length)return er("Quantities inside a bundle must be whole numbers from 1 to 99.");
+  Object.keys(q).forEach(k=>{if(+q[k]>0)bundle[k]=+q[k]});
+  if(!Object.keys(bundle).length)return er("Choose at least one product for the bundle and enter its quantity.");
+  const inb=id?M.filter(b=>isB(b)&&b.bundle[id]):[];if(inb.length)return er("This product is used inside "+inb.map(b=>b.name).join(", ")+", so it cannot become a bundle itself.")}
+ if(f.promo!==""){const pr=+f.promo;if(!isFinite(pr)||pr<0)return er("Promo price must be 0 or more.");if(pr>=price)return er("Promo price must be lower than the normal price.")}
+ if((f.pFrom||f.pTo)&&f.promo==="")return er("Enter a promo price, or clear the promo dates.");
+ if(f.pFrom&&f.pTo&&f.pFrom>f.pTo)return er("The promo start date must not be after the end date.");
+ const dup=M.find(i=>i.id!==id&&on(i)&&String(i.name).trim().toLowerCase()===f.name.toLowerCase()&&(i.cat||"Other")===f.cat);
+ if(dup)return er('A product named "'+dup.name+'" already exists in '+f.cat+".");
+ const o=id?M.find(i=>i.id===id):null,nv={name:f.name,cat:f.cat,price,stock:isb||f.stock===""?"":+f.stock,promo:f.promo===""?"":+f.promo,pFrom:f.promo===""?"":f.pFrom,pTo:f.promo===""?"":f.pTo,bundle},
+ bs=b=>b?Object.keys(b).sort().map(k=>b[k]+" x "+(M.find(m=>m.id===k)||{name:k}).name).join(", "):"",
+ ov=o?Object.assign({},o,{bundle:bs(o.bundle)}):null,nd=Object.assign({},nv,{bundle:bs(bundle)}),
+ lab=[["name","Name"],["cat","Category"],["price","Price"],["bundle","Bundle contains"],["stock","Stock"],["promo","Promo price"],["pFrom","Promo from"],["pTo","Promo until"]],
+ sh=(k,x)=>x===""||x==null?"(none)":(k==="price"||k==="promo")?fmt(x):String(x),
+ rows=lab.filter(a=>o?String(nz(ov[a[0]],""))!==String(nd[a[0]]):nd[a[0]]!=="").map(a=>o?`<div>${a[1]}: <s>${esc(sh(a[0],nz(ov[a[0]],"")))}</s> &rarr; <b>${esc(sh(a[0],nd[a[0]]))}</b></div>`:`<div>${a[1]}: <b>${esc(sh(a[0],nd[a[0]]))}</b></div>`);
+ if(o&&!rows.length)return er("Nothing was changed.");
+ cfm(o?"Confirm change":"Confirm new product",`<div class="diff"><b>${esc(nv.name)}</b>${rows.join("")}</div>${isb?'<div class="muted">Selling this bundle lowers the stock of the products inside it.</div>':""}<div class="muted">The change is kept only after you tap Save and close in Settings.</div>`,o?"Yes, apply change":"Yes, add product",()=>{
+  let it=o;if(o)Object.assign(o,nv);else{it=Object.assign({id:"m"+Date.now(),active:true},nv);M.push(it)}
+  if(!bundle)delete it.bundle;pendN++;closeM();renderList();pendSet()})}
+const prodBox=i=>`<div class="diff"><b>${esc(i.name)}</b><div>${esc(i.cat||"Other")}, ${fmt(i.price)}</div></div>`;
+const afterChange=()=>{pendN++;renderList();pendSet();if($("#mx").classList.contains("open"))offList()};
+function hideAsk(id){const i=M.find(x=>x.id===id);cfm("Hide this product?",prodBox(i)+'<div class="muted">It disappears from the cashier screen. You can bring it back under Hidden products.</div>',"Yes, hide",()=>{i.active=false;afterChange()})}
+function showAsk(id){const i=M.find(x=>x.id===id);cfm("Show this product again?",prodBox(i)+'<div class="muted">It returns to the cashier screen with its price and stock.</div>',"Yes, show it",()=>{i.active=true;afterChange()})}
+function delAsk(id){const i=M.find(x=>x.id===id),used=M.filter(b=>isB(b)&&b.bundle[i.id]);if(used.length)return note("Cannot delete this product",prodBox(i)+'<div class="muted">It is used inside: '+esc(used.map(b=>b.name).join(", "))+". Remove it from the bundle first.</div>");cfm("Delete this product?",prodBox(i)+'<div class="muted" style="color:var(--bad)">It is removed from your menu for good once you save. Past sales stay in your reports. To stop selling it for a while, hide it instead.</div>',"Yes, delete",()=>{M.splice(M.indexOf(i),1);afterChange()})}
+function offList(){const rows=M.filter(i=>!on(i)).map(i=>`<div class="pr"><div><b>${esc(i.name)}</b><div class="muted">${esc(i.cat||"Other")}, ${fmt(i.price)}</div></div><div></div><div class="pa"><button data-a="act" data-id="${i.id}">Show again</button><button class="danger" data-a="delx" data-id="${i.id}">Delete</button></div></div>`).join("");
+ openM(`<h3>Hidden products</h3><div class="muted" style="margin-bottom:8px">These are not shown on the cashier screen.</div>${rows||'<div class="empty">No hidden products.</div>'}<button data-a="close" style="margin-top:12px">Close</button>`)}
+function discard(){M=JSON.parse(snapM);save("cc_menu",M);pendN=0;$("#modal").classList.remove("open");renderMenu();renderCart()}
+$("#eCancel").onclick=()=>{if(!pendN)return discard();cfm("Discard changes?","You have "+pendN+" unsaved product change"+(pendN>1?"s":"")+". They will be lost.","Yes, discard",discard)};
+$(".tabs").onclick=e=>{const b=e.target.closest("button");if(b)showTab(b.dataset.t)};
+$("#mCat").onchange=e=>{fCat=e.target.value;renderList()};$("#mSearch").oninput=e=>{fQ=e.target.value;renderList()};
+$("#eAdd").onclick=()=>editForm(null);
+$("#erows").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.e)editForm(b.dataset.e);else if(b.dataset.h)hideAsk(b.dataset.h);else if(b.dataset.d)delAsk(b.dataset.d)};
+$("#mxc").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a;if(a==="fsave")review(b.dataset.id);else if(a==="act")showAsk(b.dataset.id);else if(a==="delx")delAsk(b.dataset.id)});
+$("#mxc").addEventListener("change",e=>{if(e.target.id==="fc")$("#fcn").hidden=e.target.value!=="__new"});
+$("#modal").addEventListener("input",()=>{$("#sErr").textContent=""});
+$("#grid").onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("item")){e.preventDefault();e.target.click()}};
+/* ---- bundles: a bundle is sold as one item but uses the stock of the products inside ---- */
+const isB=i=>!!(i&&i.bundle&&typeof i.bundle==="object"&&Object.keys(i.bundle).length);
+const comps=i=>Object.keys(i.bundle||{}).map(k=>({m:M.find(x=>x.id===k),n:+i.bundle[k]})).filter(c=>c.m&&c.n>0);
+const expand=(i,q)=>isB(i)?comps(i).map(c=>[c.m,c.n*q]):[[i,q]];
+const incStr=i=>isB(i)?comps(i).map(c=>c.n+" x "+c.m.name).join(", "):"";
+const av=i=>{let a=null;expand(i,1).forEach(p=>{if(tracked(p[0])){const x=Math.floor(+p[0].stock/p[1]);a=a==null?x:Math.min(a,x)}});return a};
+function usage(lines){const u={};lines.forEach(l=>{const it=M.find(i=>i.id===l.id);if(it)expand(it,l.qty).forEach(p=>{u[p[0].id]=(u[p[0].id]||0)+p[1]})});return u}
+function canAdd(it){const u=usage(cart),e=expand(it,1);for(let k=0;k<e.length;k++){const m=e[k][0];if(tracked(m)&&(u[m.id]||0)+e[k][1]>+m.stock)return m}return null}
+function note(t,b){$("#mcc").innerHTML=`<h3>${t}</h3>${b}<div style="margin-top:14px"><button class="primary" id="mcNo" style="width:100%">OK</button></div>`;$("#mc").classList.add("open")}
+const bundleRows=it=>M.filter(m=>!isB(m)&&m.id!==it.id&&(on(m)||(it.bundle&&it.bundle[m.id]))).map(m=>`<div class="bi" data-c="${esc(m.cat||"Other")}" data-n="${esc(String(m.name).toLowerCase())}"><span>${esc(m.name)} <small class="muted">${esc(m.cat||"Other")}${tracked(m)?", stock "+m.stock:""}</small></span><input type="number" min="0" inputmode="numeric" data-bq="${m.id}" placeholder="0" value="${(it.bundle&&it.bundle[m.id])||""}" aria-label="Quantity of ${esc(m.name)} in one bundle"></div>`).join("");
+const bundleBlock=it=>`<div><label class="chk"><input id="fb" type="checkbox"${isB(it)?" checked":""}> This product is a bundle (made of other products)</label></div><div id="bw"${isB(it)?"":" hidden"}><div class="hint" style="margin-bottom:6px">Enter how many of each product are inside ONE bundle. Selling a bundle lowers the stock of these products.</div><div class="toolbar"><input id="bq" type="search" placeholder="Search product" aria-label="Search product"><select id="bcat" aria-label="Filter by category"><option value="">All categories</option>${Array.from(new Set(M.filter(m=>on(m)&&!isB(m)).map(m=>m.cat||"Other"))).map(c=>`<option>${esc(c)}</option>`).join("")}</select></div><div id="bl" class="bl">${bundleRows(it)}</div><div class="hint" id="bsum"></div></div>`;
+function bundleRead(){const q={};document.querySelectorAll("[data-bq]").forEach(x=>{if(x.value!=="")q[x.dataset.bq]=x.value.trim()});return q}
+function bSum(){if(!$("#bsum"))return;const q=bundleRead();let t=0,c=0;Object.keys(q).forEach(k=>{const m=M.find(i=>i.id===k),n=+q[k];if(m&&n>0){t+=m.price*n;c+=n}});const p=+$("#fp").value;
+ $("#bsum").textContent=c?"Contains "+c+" item"+(c>1?"s":"")+" worth "+fmt(t)+" at normal prices."+(p>0?(p<t?" The bundle price saves "+fmt(t-p)+".":p>t?" The bundle costs more than buying the items separately.":""):""):"No products chosen yet."}
+function bFilter(){const q=$("#bq").value.trim().toLowerCase(),c=$("#bcat").value;document.querySelectorAll(".bi").forEach(r=>{r.hidden=!((!c||r.dataset.c===c)&&(!q||r.dataset.n.indexOf(q)>=0))})}
+$("#mxc").addEventListener("change",e=>{if(e.target.id==="fb"){$("#bw").hidden=!e.target.checked;$("#sw").hidden=e.target.checked;bSum()}else if(e.target.id==="bcat")bFilter()});
+$("#mxc").addEventListener("input",e=>{if(e.target.id==="bq")bFilter();else if(e.target.id==="fp"||e.target.dataset.bq)bSum()});
+function toast(t){const e=$("#toast");e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>{e.hidden=true},3500)}
+function doPrint(){try{window.print()}catch(e){toast("Printing is not available in this browser.")}}
+function saveRc(no){const r=load("cc_rc",[]);r.unshift({no,ts:Date.now(),html:$("#receipt").innerHTML});save("cc_rc",r.slice(0,30))}
+function rcList(){const r=load("cc_rc",[]);
+ openM(`<h3>Receipts</h3><div class="muted" style="margin-bottom:8px">The last ${r.length||30} receipts made on this device. Tap Print to print one again.</div>${r.map((x,i)=>`<div class="row" style="align-items:center;padding:6px 0;border-bottom:1px solid var(--bd)"><span><b>${esc(x.no)}</b><div class="muted">${new Date(x.ts).toLocaleString()}</div></span><button data-a="rcprint" data-i="${i}">Print</button></div>`).join("")||'<div class="empty">No receipts yet.</div>'}<button data-a="close" style="margin-top:12px">Close</button>`)}
+$("#mxc").addEventListener("click",e=>{const b=e.target.closest('[data-a="rcprint"]');if(!b)return;const r=load("cc_rc",[])[+b.dataset.i];if(r){$("#receipt").innerHTML=r.html;doPrint()}});
+$("#btnRc").onclick=rcList;
 $("#dq").onclick=e=>{const b=e.target.closest("button");if(b){$("#dType").value="%";$("#dVal").value=b.dataset.d;calc()}};
 renderMenu();renderCart();hdr();syncNow(true);
 var bt=document.getElementById("boot");if(bt)bt.parentNode.removeChild(bt);
